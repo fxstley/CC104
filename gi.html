@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.jpg">
+    <title>WORD CRAFTS | DICTIONARY</title>
+</head>
+
+<body>
+    <nav class="web">
+        <div class="codecraftsicon">
+            <img class="logo" src="icon.jpg " alt="Logo">
+        </div>
+        <div class="webname">
+            <p> WORD CRAFTS .</p>
+        </div>
+        <div class="menu" id="Menu">
+            <ul>
+                <li><a href="home.html" class="link">HOME</a></li>
+                <li><a href="dictionary.html" class="link active">DICTIONARY</a></li>
+
+            </ul>
+        </div>
+        <div class="close-btn">
+            <button id="close-btn" onclick="window.location.href='index.html'">X</button>
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="login-btn">Login</button>
+            <button class="btn" id="signup-btn">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <h2> Looking for </h2>
+        <ul>
+            <li><a href="ac.html">A to C</a></li>
+            <li><a href="df.html"> D to F </a></li>
+            <li><a href="gi.html">G to I</a></li>
+            <li><a href="jl.html">J to L</a></li>
+            <li><a href="mo.html">M to O</a></li>
+            <li><a href="pr.html">P to R</a></li>
+            <li><a href="su.html">S to U</a></li>
+            <li><a href="vx.html">V to X</a></li>
+            <li><a href="yz.html">Y & Z</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-button">🔍</button>
+            <button class="reset-button">✖</button>
+        </div>
+        <ul class="results-list"></ul>
+        <script>
+            const wordList = ["Garrulous", "Garrulity", "Gregarious", "Galvanize", "Grievance",
+                "Genuine", "Gluttony", "Gratify", "Garnish", "Guile",
+                "Grievous", "Glimpse", "Gullible", "Grimace", "Grim", "Garner", "Glare", "Gloat", "Gesticulate", "Gracious",
+                "Gallant", "Glimmer", "Grudge", "Grumble", "Gross", "Glimpse", "Glutton", "Graciousness", "Grandiose", "Gait",
+                "Gory", "Gory", "Gallop", "Gradual", "Grief", "Harmonious", "Hesitate", "Hubris", "Haphazard", "Hindrance",
+                "Harangue", "Hypothetical", "Harmonize", "Hostile", "Heed", "Hilarity", "Hollow", "Hasten", "Horrify", "Harbor",
+                "Hone", "Histrionics", "Hapless", "Heterogeneous", "Hallowed", "Havoc", "Havoc", "Hollow", "Herald", "Hoard",
+                "Humility", "Hail", "Humor", "Harried", "Hinder", "Hoist", "Heir", "Immutable", "Ignoble", "Imply",
+                "Indifferent", "Incessant", "Incite", "Inundate", "Indulge", "Incognito", "Irrelevant", "Impress", "Indispensable", "Influx",
+                "Ignite", "Illustrate", "Impunity", "Incognito", "Inadvertent", "Immaculate", "Intrepid", "Invasive", "Inflammatory", "Innocuous",
+                "Inquire", "Introspection", "Intuition", "Inhibit", "Illusion", "Innocent", "Indefatigable", "Indignant", "Impulsive"
+            ];
+
+            const searchInput = document.querySelector('.search-input');
+            const resultsList = document.querySelector('.results-list');
+            const resetButton = document.querySelector('.reset-button');
+
+            function searchAndSortWords() {
+                const query = searchInput.value.trim().toLowerCase();
+
+                if (query === '') {
+                    resultsList.innerHTML = '';
+                    return;
+                }
+
+                const filteredWords = wordList
+                    .filter(word => word.toLowerCase().startsWith(query))
+                    .sort((a, b) => a.localeCompare(b));
+
+                resultsList.innerHTML = '';
+
+                if (filteredWords.length > 0) {
+                    filteredWords.forEach(word => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = word;
+                        resultsList.appendChild(listItem);
+                    });
+                } else {
+                    resultsList.innerHTML = '<li>No results found</li>';
+                }
+            }
+
+            resetButton.addEventListener('click', () => {
+                searchInput.value = '';
+                resultsList.innerHTML = '';
+            });
+
+            searchInput.addEventListener('input', searchAndSortWords);
+        </script>
+        <h1>Garrulous</h1>
+        <i>(adjective)</i>
+        <p>Excessively talkative, especially about trivial matters.</p>
+
+        <h1>Garrulity</h1>
+        <i>(noun)</i>
+        <p>Talkativeness, especially about trivial matters.</p>
+
+        <h1>Gregarious</h1>
+        <i>(adjective)</i>
+        <p>Sociable, enjoying the company of others.</p>
+
+        <h1>Galvanize</h1>
+        <i>(verb)</i>
+        <p>To shock or excite someone into taking action.</p>
+
+        <h1>Grievance</h1>
+        <i>(noun)</i>
+        <p>A complaint or resentment about something perceived as unfair.</p>
+
+        <h1>Genuine</h1>
+        <i>(adjective)</i>
+        <p>Authentic, sincere, or real; not fake or counterfeit.</p>
+
+        <h1>Gluttony</h1>
+        <i>(noun)</i>
+        <p>Excessive consumption, especially of food or drink.</p>
+
+        <h1>Gratify</h1>
+        <i>(verb)</i>
+        <p>To give pleasure or satisfaction to someone.</p>
+
+        <h1>Garnish</h1>
+        <i>(verb)</i>
+        <p>To decorate or embellish food, often with herbs or condiments.</p>
+
+        <h1>Guile</h1>
+        <i>(noun)</i>
+        <p>Sly or cunning intelligence used to deceive or manipulate others.</p>
+
+        <h1>Grievous</h1>
+        <i>(adjective)</i>
+        <p>Causing great pain, sorrow, or distress.</p>
+
+        <h1>Glimpse</h1>
+        <i>(noun)</i>
+        <p>A brief or partial view of something.</p>
+
+        <h1>Gullible</h1>
+        <i>(adjective)</i>
+        <p>Easy to deceive or trick because of a lack of judgment.</p>
+
+        <h1>Grimace</h1>
+        <i>(noun)</i>
+        <p>A facial expression that shows disgust, pain, or disapproval.</p>
+
+        <h1>Grim</h1>
+        <i>(adjective)</i>
+        <p>Serious, often involving harsh or unpleasant circumstances.</p>
+
+        <h1>Garner</h1>
+        <i>(verb)</i>
+        <p>To gather or collect something, especially information or approval.</p>
+
+        <h1>Glare</h1>
+        <i>(verb)</i>
+        <p>To stare angrily or intensely at something or someone.</p>
+
+        <h1>Gloat</h1>
+        <i>(verb)</i>
+        <p>To take excessive pride or pleasure in someone else’s misfortune.</p>
+
+        <h1>Gesticulate</h1>
+        <i>(verb)</i>
+        <p>To use gestures to express or emphasize something while speaking.</p>
+
+        <h1>Gracious</h1>
+        <i>(adjective)</i>
+        <p>Courteous, kind, and pleasant, especially in social interactions.</p>
+
+        <h1>Gallant</h1>
+        <i>(adjective)</i>
+        <p>Brave, heroic, or chivalrous, especially in an idealized or romantic way.</p>
+
+        <h1>Glimmer</h1>
+        <i>(noun)</i>
+        <p>A faint or brief light or glimmering appearance.</p>
+
+        <h1>Grudge</h1>
+        <i>(noun)</i>
+        <p>A persistent feeling of resentment or ill will toward someone.</p>
+
+        <h1>Grumble</h1>
+        <i>(verb)</i>
+        <p>To complain or mutter in a low voice, often in a dissatisfied manner.</p>
+
+        <h1>Gross</h1>
+        <i>(adjective)</i>
+        <p>Unpleasant, vulgar, or offensive in appearance or behavior.</p>
+
+        <h1>Glimpse</h1>
+        <i>(verb)</i>
+        <p>To see something briefly or partially.</p>
+
+        <h1>Glutton</h1>
+        <i>(noun)</i>
+        <p>A person who consumes more than they need, especially in terms of food.</p>
+
+        <h1>Graciousness</h1>
+        <i>(noun)</i>
+        <p>The quality of being kind, polite, and considerate in behavior.</p>
+
+        <h1>Grandiose</h1>
+        <i>(adjective)</i>
+        <p>Impressive or extravagant, often to an exaggerated or pretentious degree.</p>
+
+        <h1>Gait</h1>
+        <i>(noun)</i>
+        <p>A person’s manner of walking.</p>
+
+        <h1>Gory</h1>
+        <i>(adjective)</i>
+        <p>Involving or depicting excessive bloodshed or violence.</p>
+
+        <h1>Gory</h1>
+        <i>(adjective)</i>
+        <p>Involving or depicting excessive bloodshed or violence.</p>
+
+        <h1>Gallop</h1>
+        <i>(verb)</i>
+        <p>To move at a fast pace, typically referring to the movement of a horse.</p>
+
+        <h1>Gradual</h1>
+        <i>(adjective)</i>
+        <p>Taking place or changing slowly or by small degrees.</p>
+
+        <h1>Grief</h1>
+        <i>(noun)</i>
+        <p>Intense sorrow, often caused by the loss of someone or something important.</p>
+        <br>
+        <hr> <br>
+        <h1>Harmonious</h1>
+        <i>(adjective)</i>
+        <p>Forming a pleasing or consistent whole; balanced.</p>
+
+        <h1>Hesitate</h1>
+        <i>(verb)</i>
+        <p>To pause before doing something, often due to uncertainty or reluctance.</p>
+
+        <h1>Hubris</h1>
+        <i>(noun)</i>
+        <p>Excessive pride, arrogance, or self-confidence.</p>
+
+        <h1>Haphazard</h1>
+        <i>(adjective)</i>
+        <p>Lacking any obvious principle of organization or order; random.</p>
+
+        <h1>Hindrance</h1>
+        <i>(noun)</i>
+        <p>Something that delays or prevents progress.</p>
+
+        <h1>Harangue</h1>
+        <i>(noun)</i>
+        <p>A lengthy and aggressive speech or lecture.</p>
+
+        <h1>Hypothetical</h1>
+        <i>(adjective)</i>
+        <p>Based on a suggested idea or assumption rather than actual facts.</p>
+
+        <h1>Harmonize</h1>
+        <i>(verb)</i>
+        <p>To bring into agreement or concord; to make consistent.</p>
+
+        <h1>Hostile</h1>
+        <i>(adjective)</i>
+        <p>Showing or feeling opposition, unfriendliness, or antagonism.</p>
+
+        <h1>Heed</h1>
+        <i>(verb)</i>
+        <p>To pay attention to or take notice of something.</p>
+
+        <h1>Hilarity</h1>
+        <i>(noun)</i>
+        <p>Great amusement, often resulting in laughter.</p>
+
+        <h1>Hollow</h1>
+        <i>(adjective)</i>
+        <p>Having a space or cavity inside; empty.</p>
+
+        <h1>Hasten</h1>
+        <i>(verb)</i>
+        <p>To cause something to happen more quickly; to accelerate.</p>
+
+        <h1>Horrify</h1>
+        <i>(verb)</i>
+        <p>To cause someone to feel shock, disgust, or fear.</p>
+
+        <h1>Harbor</h1>
+        <i>(verb)</i>
+        <p>To give shelter or refuge to someone or something.</p>
+
+        <h1>Hone</h1>
+        <i>(verb)</i>
+        <p>To sharpen or improve something, especially a skill or ability.</p>
+
+        <h1>Histrionics</h1>
+        <i>(noun)</i>
+        <p>Exaggerated or theatrical behavior, often to attract attention.</p>
+
+        <h1>Hapless</h1>
+        <i>(adjective)</i>
+        <p>Unlucky or unfortunate; having no luck.</p>
+
+        <h1>Heterogeneous</h1>
+        <i>(adjective)</i>
+        <p>Composed of different elements or parts.</p>
+
+        <h1>Hallowed</h1>
+        <i>(adjective)</i>
+        <p>Regarded as holy or sacred.</p>
+
+        <h1>Havoc</h1>
+        <i>(noun)</i>
+        <p>Wide and general destruction or chaos.</p>
+
+        <h1>Havoc</h1>
+        <i>(noun)</i>
+        <p>Wide and general destruction or chaos.</p>
+
+        <h1>Hollow</h1>
+        <i>(adjective)</i>
+        <p>Having a space or cavity inside; empty.</p>
+
+        <h1>Herald</h1>
+        <i>(noun)</i>
+        <p>A messenger or announcer of something important.</p>
+
+        <h1>Hoard</h1>
+        <i>(verb)</i>
+        <p>To accumulate or store something, often in excessive amounts.</p>
+
+        <h1>Humility</h1>
+        <i>(noun)</i>
+        <p>The quality of being humble or modest; not arrogant.</p>
+
+        <h1>Hail</h1>
+        <i>(verb)</i>
+        <p>To greet or acclaim enthusiastically.</p>
+
+        <h1>Humor</h1>
+        <i>(noun)</i>
+        <p>The quality of being amusing, or the ability to make others laugh.</p>
+
+        <h1>Harried</h1>
+        <i>(adjective)</i>
+        <p>Feeling distressed or rushed due to pressure or demands.</p>
+
+        <h1>Hinder</h1>
+        <i>(verb)</i>
+        <p>To prevent or delay the progress or development of something.</p>
+
+        <h1>Hoist</h1>
+        <i>(verb)</i>
+        <p>To raise or lift something, often with the help of mechanical equipment.</p>
+
+        <h1>Heir</h1>
+        <i>(noun)</i>
+        <p>A person who inherits property, wealth, or a title from a predecessor.</p>
+        <br>
+        <hr> <br>
+        <h1>Immutable</h1>
+        <i>(adjective)</i>
+        <p>Unchanging over time; unable to be altered.</p>
+
+        <h1>Ignoble</h1>
+        <i>(adjective)</i>
+        <p>Not honorable in character or purpose; of low social status.</p>
+
+        <h1>Imply</h1>
+        <i>(verb)</i>
+        <p>To suggest or indicate something without stating it directly.</p>
+
+        <h1>Indifferent</h1>
+        <i>(adjective)</i>
+        <p>Having no particular interest or concern; unconcerned.</p>
+
+        <h1>Incessant</h1>
+        <i>(adjective)</i>
+        <p>Continuing without interruption; unceasing.</p>
+
+        <h1>Incite</h1>
+        <i>(verb)</i>
+        <p>To stir up or provoke action, often in a negative or rebellious manner.</p>
+
+        <h1>Inundate</h1>
+        <i>(verb)</i>
+        <p>To overwhelm or flood something with a large amount of something.</p>
+
+        <h1>Indulge</h1>
+        <i>(verb)</i>
+        <p>To allow oneself to enjoy something, often excessively.</p>
+
+        <h1>Incognito</h1>
+        <i>(adjective)</i>
+        <p>In disguise or using a false identity to avoid being recognized.</p>
+
+        <h1>Irrelevant</h1>
+        <i>(adjective)</i>
+        <p>Not related or pertinent to the matter at hand.</p>
+
+        <h1>Impress</h1>
+        <i>(verb)</i>
+        <p>To make a strong impact or leave a lasting effect on someone.</p>
+
+        <h1>Indispensable</h1>
+        <i>(adjective)</i>
+        <p>Absolutely necessary or essential.</p>
+
+        <h1>Influx</h1>
+        <i>(noun)</i>
+        <p>A flowing in or arrival of something in large numbers or quantities.</p>
+
+        <h1>Ignite</h1>
+        <i>(verb)</i>
+        <p>To start a fire or cause something to burn.</p>
+
+        <h1>Illustrate</h1>
+        <i>(verb)</i>
+        <p>To explain or clarify something with examples or visual aids.</p>
+
+        <h1>Impunity</h1>
+        <i>(noun)</i>
+        <p>Exemption from punishment or consequences for one's actions.</p>
+
+        <h1>Incognito</h1>
+        <i>(adjective)</i>
+        <p>In disguise or using a false identity to avoid being recognized.</p>
+
+        <h1>Inadvertent</h1>
+        <i>(adjective)</i>
+        <p>Not intentional; accidental.</p>
+
+        <h1>Immaculate</h1>
+        <i>(adjective)</i>
+        <p>Perfectly clean or free from flaws; spotless.</p>
+
+        <h1>Intrepid</h1>
+        <i>(adjective)</i>
+        <p>Fearless, brave, or courageous.</p>
+
+        <h1>Invasive</h1>
+        <i>(adjective)</i>
+        <p>Tending to intrude or spread aggressively.</p>
+
+        <h1>Inflammatory</h1>
+        <i>(adjective)</i>
+        <p>Likely to provoke strong emotions, anger, or conflict.</p>
+
+        <h1>Innocuous</h1>
+        <i>(adjective)</i>
+        <p>Not harmful or offensive; safe.</p>
+
+        <h1>Inquire</h1>
+        <i>(verb)</i>
+        <p>To ask or seek information about something.</p>
+
+        <h1>Introspection</h1>
+        <i>(noun)</i>
+        <p>The act of looking inward or examining one's own thoughts and feelings.</p>
+
+        <h1>Intuition</h1>
+        <i>(noun)</i>
+        <p>The ability to understand something instinctively without the need for conscious reasoning.</p>
+
+        <h1>Inhibit</h1>
+        <i>(verb)</i>
+        <p>To prevent or hinder the progress or development of something.</p>
+
+        <h1>Illusion</h1>
+        <i>(noun)</i>
+        <p>A false or misleading perception or belief.</p>
+
+        <h1>Innocent</h1>
+        <i>(adjective)</i>
+        <p>Not guilty of a crime or wrongdoing; pure and harmless.</p>
+
+        <h1>Indefatigable</h1>
+        <i>(adjective)</i>
+        <p>Unable to be tired out; relentless and tireless.</p>
+
+        <h1>Indignant</h1>
+        <i>(adjective)</i>
+        <p>Feeling anger or annoyance at something perceived as unfair or wrong.</p>
+
+        <h1>Impulsive</h1>
+        <i>(adjective)</i>
+        <p>Acting without careful thought or planning; spontaneous.</p>
+        <br>
+    </div>
+
+</body>
+
+</html>

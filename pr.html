@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.jpg">
+    <title>WORD CRAFTS | DICTIONARY</title>
+</head>
+
+<body>
+    <nav class="web">
+        <div class="codecraftsicon">
+            <img class="logo" src="icon.jpg " alt="Logo">
+        </div>
+        <div class="webname">
+            <p> WORD CRAFTS .</p>
+        </div>
+        <div class="menu" id="Menu">
+            <ul>
+                <li><a href="home.html" class="link">HOME</a></li>
+                <li><a href="dictionary.html" class="link active">DICTIONARY</a></li>
+            </ul>
+        </div>
+        <div class="close-btn">
+            <button id="close-btn" onclick="window.location.href='index.html'">X</button>
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="login-btn">Login</button>
+            <button class="btn" id="signup-btn">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <h2> Looking for </h2>
+        <ul>
+            <li><a href="ac.html">A to C</a></li>
+            <li><a href="df.html"> D to F </a></li>
+            <li><a href="gi.html">G to I</a></li>
+            <li><a href="jl.html">J to L</a></li>
+            <li><a href="mo.html">M to O</a></li>
+            <li><a href="pr.html">P to R</a></li>
+            <li><a href="su.html">S to U</a></li>
+            <li><a href="vx.html">V to X</a></li>
+            <li><a href="yz.html">Y & Z</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-button">🔍</button>
+            <button class="reset-button">✖</button>
+        </div>
+        <ul class="results-list"></ul>
+        <script>
+            const wordList = ["Pantomime", "Paragon", "Pensive", "Procrastinate", "Plausible",
+                "Precarious", "Perplexed", "Prejudice", "Ponder", "Pernicious", 
+                "Parody", "Placate", "Petulant", "Pantomime", "Prodigious", 
+                "Prevalent", "Pragmatic", "Prolific", "Pillage", "Paradox", 
+                "Plausibility", "Pinnacle", "Ponderous", "Penultimate",
+                "Prominent", "Perpetuate", "Placidity", "Paralyze", "Pristine", "Postulate",
+                "Quandary", "Quaint", "Qualm", "Quench", "Query", "Quip", "Quaintness", "Quarantine", "Quarrel", "Quash", "Quiescent", "Quixotic",
+                "Quick-witted", "Quietude", "Quotient", "Quadrant", "Qualitative", "Quantitative",
+                "Quiddity", "Quenchless", "Quasi", "Quorum", "Quadruped", "Quicksilver",
+                "Quantify", "Quasi-judicial", "Quintessential", "Quasi-military", "Quarrelsome", "Quip",
+                "Quenchable", "Quantification", "Rabble", "Raze", "Ravenous", "Recant",
+                "Renaissance", "Repudiate", "Rogue", "Rejuvenate", "Resilient", "Requisite",
+                "Reticent", "Reckless", "Rancor", "Reverberate", "Reproach", "Revel",
+                "Rhetoric", "Replicate", "Rescind", "Rampant", "Regal", "Reclusive",
+                "Redundant", "Reproving", "Raucous", "Ravish", "Ruminate", "Repercussion",
+                "Resplendent", "Rend", "Rhetorical", "Rebuff", "Retaliate", "Recuperate",
+                "Recalibrate", "Revelry", "Rescind"];
+
+            const searchInput = document.querySelector('.search-input');
+            const resultsList = document.querySelector('.results-list');
+            const resetButton = document.querySelector('.reset-button');
+
+            function searchAndSortWords() {
+                const query = searchInput.value.trim().toLowerCase();
+
+                if (query === '') {
+                    resultsList.innerHTML = '';
+                    return;
+                }
+
+                const filteredWords = wordList
+                    .filter(word => word.toLowerCase().startsWith(query))
+                    .sort((a, b) => a.localeCompare(b));
+
+                resultsList.innerHTML = '';
+
+                if (filteredWords.length > 0) {
+                    filteredWords.forEach(word => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = word;
+                        resultsList.appendChild(listItem);
+                    });
+                } else {
+                    resultsList.innerHTML = '<li>No results found</li>';
+                }
+            }
+
+            resetButton.addEventListener('click', () => {
+                searchInput.value = '';
+                resultsList.innerHTML = '';
+            });
+
+            searchInput.addEventListener('input', searchAndSortWords);
+        </script>
+        <h1>Pantomime</h1>
+        <i>(noun)</i>
+        <p>A dramatic entertainment in which performers express meaning through gestures accompanied by music, without
+            speaking.</p>
+
+        <h1>Paragon</h1>
+        <i>(noun)</i>
+        <p>A model of excellence or perfection.</p>
+
+        <h1>Pensive</h1>
+        <i>(adjective)</i>
+        <p>Engaged in serious thought; reflective or contemplative.</p>
+
+        <h1>Procrastinate</h1>
+        <i>(verb)</i>
+        <p>To delay or postpone an action or task, often out of avoidance or reluctance.</p>
+
+        <h1>Plausible</h1>
+        <i>(adjective)</i>
+        <p>Seemingly reasonable or probable; believable.</p>
+
+        <h1>Precarious</h1>
+        <i>(adjective)</i>
+        <p>Dangerously unstable or unsecure; risky.</p>
+
+        <h1>Perplexed</h1>
+        <i>(adjective)</i>
+        <p>Confused or bewildered, often due to a lack of clarity or understanding.</p>
+
+        <h1>Prejudice</h1>
+        <i>(noun)</i>
+        <p>A preconceived opinion or judgment, usually negative, about someone or something.</p>
+
+        <h1>Ponder</h1>
+        <i>(verb)</i>
+        <p>To think about something carefully, especially before making a decision.</p>
+
+        <h1>Pernicious</h1>
+        <i>(adjective)</i>
+        <p>Having a harmful effect, especially in a gradual or subtle way.</p>
+
+        <h1>Parody</h1>
+        <i>(noun)</i>
+        <p>A humorous or exaggerated imitation of a serious work of art or literature.</p>
+
+        <h1>Placate</h1>
+        <i>(verb)</i>
+        <p>To make someone less angry or upset by offering concessions or showing concern.</p>
+
+        <h1>Petulant</h1>
+        <i>(adjective)</i>
+        <p>Childishly sulky or bad-tempered; easily irritated.</p>
+
+        <h1>Pantomime</h1>
+        <i>(verb)</i>
+        <p>To express or convey meaning using gestures, usually without speaking.</p>
+
+        <h1>Prodigious</h1>
+        <i>(adjective)</i>
+        <p>Remarkably great in size, extent, or degree; enormous.</p>
+
+        <h1>Prevalent</h1>
+        <i>(adjective)</i>
+        <p>Widespread or commonly occurring at a particular time or place.</p>
+
+        <h1>Pragmatic</h1>
+        <i>(adjective)</i>
+        <p>Dealing with things sensibly and realistically, based on practical considerations rather than theory or
+            ideals.</p>
+
+        <h1>Prolific</h1>
+        <i>(adjective)</i>
+        <p>Producing a large amount of work or output, especially in terms of creative or intellectual products.</p>
+
+        <h1>Pillage</h1>
+        <i>(verb)</i>
+        <p>To steal goods, especially during war or conflict, often in a violent or forceful manner.</p>
+
+        <h1>Paradox</h1>
+        <i>(noun)</i>
+        <p>A statement or situation that seems contradictory or self-refuting but may hold some truth.</p>
+
+        <h1>Plausibility</h1>
+        <i>(noun)</i>
+        <p>The quality of being seemingly reasonable or likely.</p>
+
+        <h1>Pinnacle</h1>
+        <i>(noun)</i>
+        <p>The highest or most successful point of achievement.</p>
+
+        <h1>Ponderous</h1>
+        <i>(adjective)</i>
+        <p>Slow and clumsy due to weight or size; dull or laborious in thought or style.</p>
+
+        <h1>Penultimate</h1>
+        <i>(adjective)</i>
+        <p>Second to last; just before the final item or stage.</p>
+
+        <h1>Prominent</h1>
+        <i>(adjective)</i>
+        <p>Well-known or important; standing out or easily noticeable.</p>
+
+        <h1>Perpetuate</h1>
+        <i>(verb)</i>
+        <p>To cause something to continue or endure over time, often unnecessarily.</p>
+
+        <h1>Placidity</h1>
+        <i>(noun)</i>
+        <p>The quality of being calm and peaceful; tranquility.</p>
+
+        <h1>Paralyze</h1>
+        <i>(verb)</i>
+        <p>To cause to become incapable of movement or function, often due to injury or disease.</p>
+
+        <h1>Pristine</h1>
+        <i>(adjective)</i>
+        <p>In its original, unspoiled condition; clean and fresh.</p>
+
+        <h1>Postulate</h1>
+        <i>(verb)</i>
+        <p>To assume or claim something as true, often as a basis for further reasoning or argument.</p>
+        <br>
+        <hr> <br>
+        <h1>Quandary</h1>
+        <i>(noun)</i>
+        <p>A state of uncertainty or perplexity, often due to a difficult situation.</p>
+
+        <h1>Quaint</h1>
+        <i>(adjective)</i>
+        <p>Attractively unusual or old-fashioned; charmingly odd.</p>
+
+        <h1>Qualm</h1>
+        <i>(noun)</i>
+        <p>An uneasy feeling of doubt or worry, especially about one's actions or decisions.</p>
+
+        <h1>Quench</h1>
+        <i>(verb)</i>
+        <p>To satisfy thirst by drinking; to extinguish or put out (a fire or light).</p>
+
+        <h1>Query</h1>
+        <i>(noun)</i>
+        <p>A question, especially one addressed to an official or authoritative source.</p>
+
+        <h1>Quip</h1>
+        <i>(noun)</i>
+        <p>A witty or clever remark or comment.</p>
+
+        <h1>Quaintness</h1>
+        <i>(noun)</i>
+        <p>The quality of being charmingly unusual or old-fashioned.</p>
+
+        <h1>Quarantine</h1>
+        <i>(noun)</i>
+        <p>A period of isolation imposed to prevent the spread of disease.</p>
+
+        <h1>Quarrel</h1>
+        <i>(verb)</i>
+        <p>To argue or fight, usually in a petty or angry manner.</p>
+
+        <h1>Quash</h1>
+        <i>(verb)</i>
+        <p>To reject or suppress something, such as a decision, law, or action.</p>
+
+        <h1>Quiescent</h1>
+        <i>(adjective)</i>
+        <p>In a state of inactivity or dormancy; not moving or active.</p>
+
+        <h1>Quixotic</h1>
+        <i>(adjective)</i>
+        <p>Extremely idealistic; unrealistic and impractical in pursuit of a noble goal.</p>
+
+        <h1>Quick-witted</h1>
+        <i>(adjective)</i>
+        <p>Mentally sharp and able to respond quickly and cleverly.</p>
+
+        <h1>Quietude</h1>
+        <i>(noun)</i>
+        <p>A state of calmness or tranquility.</p>
+
+        <h1>Quotient</h1>
+        <i>(noun)</i>
+        <p>The result of a division, especially in mathematics.</p>
+
+        <h1>Quadrant</h1>
+        <i>(noun)</i>
+        <p>A quarter of a circle, often used in measuring or mapping.</p>
+
+        <h1>Qualitative</h1>
+        <i>(adjective)</i>
+        <p>Relating to or concerned with qualities or characteristics, rather than quantity.</p>
+
+        <h1>Quantitative</h1>
+        <i>(adjective)</i>
+        <p>Relating to or involving the measurement of quantity or amount.</p>
+
+        <h1>Quiddity</h1>
+        <i>(noun)</i>
+        <p>The inherent nature or essence of something; the essential quality.</p>
+
+        <h1>Quenchless</h1>
+        <i>(adjective)</i>
+        <p>Impossible to satisfy or extinguish, especially regarding thirst or desire.</p>
+
+        <h1>Quasi</h1>
+        <i>(adjective)</i>
+        <p>Resembling something, but not actually being that thing; partially or seemingly.</p>
+
+        <h1>Quorum</h1>
+        <i>(noun)</i>
+        <p>The minimum number of members required to be present for a meeting to be valid or official.</p>
+
+        <h1>Quadruped</h1>
+        <i>(noun)</i>
+        <p>An animal that walks on four feet, such as a dog or horse.</p>
+
+        <h1>Quicksilver</h1>
+        <i>(noun)</i>
+        <p>The liquid metal mercury, often used figuratively to describe something elusive or changeable.</p>
+
+        <h1>Quantify</h1>
+        <i>(verb)</i>
+        <p>To measure or express the quantity of something.</p>
+
+        <h1>Quasi-judicial</h1>
+        <i>(adjective)</i>
+        <p>Having some characteristics of a judicial body or process, though not fully judicial in nature.</p>
+
+        <h1>Quintessential</h1>
+        <i>(adjective)</i>
+        <p>Representing the most perfect or typical example of a quality or class.</p>
+
+        <h1>Quasi-military</h1>
+        <i>(adjective)</i>
+        <p>Having characteristics of the military, but not fully part of it.</p>
+
+        <h1>Quarrelsome</h1>
+        <i>(adjective)</i>
+        <p>Prone to arguing or causing disagreements.</p>
+
+        <h1>Quip</h1>
+        <i>(verb)</i>
+        <p>To make a witty remark or comment.</p>
+
+        <h1>Quenchable</h1>
+        <i>(adjective)</i>
+        <p>Capable of being satisfied or extinguished, especially thirst or fire.</p>
+
+        <h1>Quantification</h1>
+        <i>(noun)</i>
+        <p>The process of measuring or determining the quantity of something.</p>
+        <br>
+        <hr> <br>
+
+        <h1>Rabble</h1>
+        <i>(noun)</i>
+        <p>A disorderly crowd, often with disruptive behavior.</p>
+
+        <h1>Raze</h1>
+        <i>(verb)</i>
+        <p>To completely destroy or demolish something, especially a building.</p>
+
+        <h1>Ravenous</h1>
+        <i>(adjective)</i>
+        <p>Extremely hungry; devouring food eagerly or excessively.</p>
+
+        <h1>Recant</h1>
+        <i>(verb)</i>
+        <p>To withdraw or take back a statement, belief, or opinion.</p>
+
+        <h1>Renaissance</h1>
+        <i>(noun)</i>
+        <p>A period of renewed interest and activity in the arts and learning, particularly after the Middle Ages.</p>
+
+        <h1>Repudiate</h1>
+        <i>(verb)</i>
+        <p>To reject or disown something, such as an idea, belief, or claim.</p>
+
+        <h1>Rogue</h1>
+        <i>(noun)</i>
+        <p>A dishonest or unprincipled person, often acting independently or in opposition to authority.</p>
+
+        <h1>Rejuvenate</h1>
+        <i>(verb)</i>
+        <p>To make someone or something look or feel younger, fresher, or more lively.</p>
+
+        <h1>Resilient</h1>
+        <i>(adjective)</i>
+        <p>Able to recover quickly from difficult conditions or setbacks.</p>
+
+        <h1>Requisite</h1>
+        <i>(adjective)</i>
+        <p>Essential or necessary for a particular purpose or situation.</p>
+
+        <h1>Reticent</h1>
+        <i>(adjective)</i>
+        <p>Not revealing one's thoughts or feelings readily; reserved.</p>
+
+        <h1>Reckless</h1>
+        <i>(adjective)</i>
+        <p>Without regard for the consequences; careless or irresponsible.</p>
+
+        <h1>Rancor</h1>
+        <i>(noun)</i>
+        <p>Deep-seated bitterness or resentment, especially lasting for a long time.</p>
+
+        <h1>Reverberate</h1>
+        <i>(verb)</i>
+        <p>To echo or resound, often with a continuing effect or impact.</p>
+
+        <h1>Reproach</h1>
+        <i>(noun)</i>
+        <p>Expressing disapproval or disappointment; blame or criticism.</p>
+
+        <h1>Revel</h1>
+        <i>(verb)</i>
+        <p>To take great pleasure or delight in something, especially in a carefree or celebratory manner.</p>
+
+        <h1>Rhetoric</h1>
+        <i>(noun)</i>
+        <p>The art of effective or persuasive speaking or writing, often using figures of speech.</p>
+
+        <h1>Replicate</h1>
+        <i>(verb)</i>
+        <p>To make an exact copy of something, or to repeat an experiment or procedure.</p>
+
+        <h1>Rescind</h1>
+        <i>(verb)</i>
+        <p>To revoke, cancel, or annul a decision, order, or agreement.</p>
+
+        <h1>Rampant</h1>
+        <i>(adjective)</i>
+        <p>Uncontrolled or widespread, often referring to something undesirable.</p>
+
+        <h1>Regal</h1>
+        <i>(adjective)</i>
+        <p>Of or resembling royalty; fit for a king or queen.</p>
+
+        <h1>Reclusive</h1>
+        <i>(adjective)</i>
+        <p>Seeking solitude; withdrawn from society or social contact.</p>
+
+        <h1>Redundant</h1>
+        <i>(adjective)</i>
+        <p>Unnecessarily repetitive or excessive; no longer needed.</p>
+
+        <h1>Reproving</h1>
+        <i>(adjective)</i>
+        <p>Expressing disapproval; censuring.</p>
+
+        <h1>Raucous</h1>
+        <i>(adjective)</i>
+        <p>Loud, noisy, and often disorderly in a way that is unpleasant or disturbing.</p>
+
+        <h1>Ravish</h1>
+        <i>(verb)</i>
+        <p>To seize and carry off by force; to fill someone with intense pleasure or delight.</p>
+
+        <h1>Ruminate</h1>
+        <i>(verb)</i>
+        <p>To think deeply about something; to ponder or reflect.</p>
+
+        <h1>Repercussion</h1>
+        <i>(noun)</i>
+        <p>An unintended consequence or effect, especially one that is unwelcome.</p>
+
+        <h1>Resplendent</h1>
+        <i>(adjective)</i>
+        <p>Shining brilliantly; radiant or dazzling in appearance.</p>
+
+        <h1>Rend</h1>
+        <i>(verb)</i>
+        <p>To tear or split something violently or forcefully.</p>
+
+        <h1>Rhetorical</h1>
+        <i>(adjective)</i>
+        <p>Relating to or concerned with the use of language effectively and persuasively.</p>
+
+        <h1>Rebuff</h1>
+        <i>(verb)</i>
+        <p>To reject or snub someone or something in a blunt or discourteous manner.</p>
+
+        <h1>Retaliate</h1>
+        <i>(verb)</i>
+        <p>To take revenge or retaliate against someone, usually in response to an injury or wrong.</p>
+
+        <h1>Recuperate</h1>
+        <i>(verb)</i>
+        <p>To recover or regain health, strength, or normal condition after an illness or setback.</p>
+
+        <h1>Recalibrate</h1>
+        <i>(verb)</i>
+        <p>To adjust or reset something to its correct or optimal condition.</p>
+
+        <h1>Revelry</h1>
+        <i>(noun)</i>
+        <p>Lively and noisy festivities or celebrations.</p>
+
+        <h1>Rescind</h1>
+        <i>(verb)</i>
+        <p>To take back, cancel, or revoke something previously agreed upon.</p>
+
+    </div>
+
+</body>
+
+</html>

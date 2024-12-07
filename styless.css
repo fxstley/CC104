@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'HARRYP_';
+    src: url(HARRYP__.TTF);
+}
+
+body {
+    background-color: #fd96a7;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navigation Bar Styling */
+.web {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: palevioletred;
+}
+
+.logo {
+    position: relative;
+    height: 130px;
+    width: 130px;
+    bottom: 15px;
+    right: 20px;
+    transform: scale(0.5);
+}
+
+.webname p {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    position: relative;
+    right: 100px;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu ul li {
+    list-style-type: none;
+}
+
+.menu ul li .link {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 15px;
+    position: relative;
+    left: 35px;
+    margin: 0 35px;
+}
+
+.link:hover, .active {
+    border-bottom: 2px solid #f8a7b5;
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px; 
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+#close-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #fff; 
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    right: 15px;
+}
+
+#close-btn:hover {
+    color: pink; 
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn {
+    background-color: #fd96a7;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    right: 20px;
+}
+
+.btn:hover {
+    background-color: #ff6780;
+}
+
+/* Quote Section Styling */
+.quote {
+    text-align: center;
+    padding-top: 300px;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.quote p {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 35px;
+    color: #ffffff;
+}
+
+.content .search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #ff6780;
+    border-radius: 25px;
+    position: relative;
+    bottom: 330px;
+    left: 160px;
+    overflow: hidden;
+    width: 950px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content .search-input {
+    border: none;
+    color: #ff6780;
+    outline: none;
+    padding: 10px 15px;
+    flex: 1;
+    font-size: 16px;
+}
+
+.content .search-input::placeholder {
+    color: #ff6780;
+    font-style: italic;
+}
+
+.content .search-button {
+    background-color: #fd96a7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.content .search-button:hover {
+    background-color: palevioletred;
+}
+
+.content .results-list {
+    width: 250px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2px;
+    max-height: 500px;
+    position: relative;
+    left: 170px;
+    bottom: 340px;
+    overflow-y: auto;
+}
+
+.results-container p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.results-list {
+    max-height: 200px; 
+    overflow-y: auto;   
+    margin-top: 10px;    
+    padding: 0;
+    list-style-type: none;
+    border: 1px solid #ddd;  
+    border-radius: 4px;  
+    z-index: 0;
+    font-weight: bolder;
+}
+
+
+.results-list li {
+    padding: 5px;
+    border-bottom: 1px solid palevioletred;
+    color:rgb(252, 163, 178);
+    
+}
+
+.results-list li:hover {
+    color:#fa4b68;
+}
+
+
+
+.results-list li:last-child {
+    border-bottom: none;  
+}
+.reset-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px;
+    color: #666;
+}
+
+.reset-button:hover {
+    color:#fa4b68;
+}
+
+.definition-container {
+    width: 510px;
+    bottom: 345px;
+    height: 110px;
+    left: 510px;
+    border: 1px solid palevioletred;
+    border-radius: 7px;
+    background-color: pink;
+    position: fixed;
+    overflow-y: auto;
+}
+
+#word-title {
+    position: relative;
+    left: 5px;
+    bottom: 5px;
+    color:#ff6780;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#word-definition {
+    position: relative;
+    left: 10px;
+    font-size: 15px;
+}

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.jpg">
+    <title>WORD CRAFTS | DICTIONARY</title>
+</head>
+
+<body>
+    <nav class="web">
+        <div class="codecraftsicon">
+            <img class="logo" src="icon.jpg " alt="Logo">
+        </div>
+        <div class="webname">
+            <p> WORD CRAFTS .</p>
+        </div>
+        <div class="menu" id="Menu">
+            <ul>
+                <li><a href="home.html" class="link">HOME</a></li>
+                <li><a href="dictionary.html" class="link active">DICTIONARY</a></li>
+
+            </ul>
+        </div>
+        <div class="close-btn">
+            <button id="close-btn" onclick="window.location.href='index.html'">X</button>
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="login-btn">Login</button>
+            <button class="btn" id="signup-btn">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <h2> Looking for </h2>
+        <ul>
+            <li><a href="ac.html">A to C</a></li>
+            <li><a href="df.html"> D to F </a></li>
+            <li><a href="gi.html">G to I</a></li>
+            <li><a href="jl.html">J to L</a></li>
+            <li><a href="mo.html">M to O</a></li>
+            <li><a href="pr.html">P to R</a></li>
+            <li><a href="su.html">S to U</a></li>
+            <li><a href="vx.html">V to X</a></li>
+            <li><a href="yz.html">Y & Z</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-button">🔍</button>
+            <button class="reset-button">✖</button>
+        </div>
+        <ul class="results-list"></ul>
+        <script>
+            const wordList = ["Abandon", "Acumen", "Altruism", "Amiable", "Acquiesce",
+                "Abridge", "Ambiguous", "Arduous", "Aplomb", "Apathy",
+                "Apprehensive", "Abdicate", "Affable", "Astute", "Adulate",
+                "Antagonist", "Avarice", "Affluent", "Abhor", "Adequate",
+                "Accommodate", "Anecdote", "Alleviate", "Affliction", "Arbitrary",
+                "Aggravate", "Ascend", "Adversary", "Admonish", "Allay",
+                "Allegory", "Benign", "Belligerent", "Benevolent", "Blatant",
+                "Boisterous", "Brisk", "Banal", "Brash", "Bliss",
+                "Bequeath", "Befriend", "Bravado", "Benevolence", "Buffet",
+                "Bulwark", "Banish", "Balmy", "Blunder", "Bygone",
+                "Barbaric", "Boastful", "Bustling", "Beguile", "Bramble",
+                "Bluster", "Broach", "Bedlam", "Breach", "Brutality",
+                "Brackish", "Cacophony", "Capacious", "Caustic", "Concise",
+                "Chronic", "Capricious", "Compassionate", "Clarity", "Collaborate",
+                "Caress", "Concur", "Confide", "Chivalrous", "Cryptic",
+                "Cordial", "Culminate", "Conundrum", "Cynical", "Convivial",
+                "Chide", "Conceal", "Clamor", "Comprehend", "Critique",
+                "Commence", "Chronic", "Confound", "Consequence", "Cataclysm",
+                "Consolation"];
+
+            const searchInput = document.querySelector('.search-input');
+            const resultsList = document.querySelector('.results-list');
+            const resetButton = document.querySelector('.reset-button');
+
+            function searchAndSortWords() {
+                const query = searchInput.value.trim().toLowerCase();
+
+                if (query === '') {
+                    resultsList.innerHTML = '';
+                    return;
+                }
+
+                const filteredWords = wordList
+                    .filter(word => word.toLowerCase().startsWith(query))
+                    .sort((a, b) => a.localeCompare(b));
+
+                resultsList.innerHTML = '';
+
+                if (filteredWords.length > 0) {
+                    filteredWords.forEach(word => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = word;
+                        resultsList.appendChild(listItem);
+                    });
+                } else {
+                    resultsList.innerHTML = '<li>No results found</li>';
+                }
+            }
+
+            resetButton.addEventListener('click', () => {
+                searchInput.value = '';
+                resultsList.innerHTML = '';
+            });
+
+            searchInput.addEventListener('input', searchAndSortWords);
+        </script>
+        <h1>Abandon</h1>
+        <i>(verb)</i>
+        <p>To leave something or someone behind, often in a state of neglect.</p>
+
+        <h1>Acumen</h1>
+        <i>(noun)</i>
+        <p>The ability to make quick and accurate judgments or decisions.</p>
+
+        <h1>Altruism</h1>
+        <i>(noun)</i>
+        <p>The selfless concern for the well-being of others.</p>
+
+        <h1>Amiable</h1>
+        <i>(adjective)</i>
+        <p>Friendly and pleasant in manner or appearance.</p>
+
+        <h1>Acquiesce</h1>
+        <i>(verb)</i>
+        <p>To accept something reluctantly but without protest.</p>
+
+        <h1>Abridge</h1>
+        <i>(verb)</i>
+        <p>To shorten or condense a piece of writing or speech.</p>
+
+        <h1>Ambiguous</h1>
+        <i>(adjective)</i>
+        <p>Having more than one possible meaning or interpretation; unclear.</p>
+
+        <h1>Arduous</h1>
+        <i>(adjective)</i>
+        <p>Requiring great effort and hard work; strenuous.</p>
+
+        <h1>Aplomb</h1>
+        <i>(noun)</i>
+        <p>Self-confidence or assurance, especially in a difficult situation.</p>
+
+        <h1>Apathy</h1>
+        <i>(noun)</i>
+        <p>Lack of interest, enthusiasm, or concern.</p>
+
+        <h1>Apprehensive</h1>
+        <i>(adjective)</i>
+        <p>Anxious or fearful about something that may happen.</p>
+
+        <h1>Abdicate</h1>
+        <i>(verb)</i>
+        <p>To formally give up a position of power or responsibility.</p>
+
+        <h1>Affable</h1>
+        <i>(adjective)</i>
+        <p>Friendly, easy to talk to, and approachable.</p>
+
+        <h1>Astute</h1>
+        <i>(adjective)</i>
+        <p>Having a sharp insight or perception; clever or shrewd.</p>
+
+        <h1>Adulate</h1>
+        <i>(verb)</i>
+        <p>To praise excessively or overly flatter someone.</p>
+
+        <h1>Antagonist</h1>
+        <i>(noun)</i>
+        <p>A person who actively opposes or is hostile to someone or something.</p>
+
+        <h1>Avarice</h1>
+        <i>(noun)</i>
+        <p>Extreme greed for wealth or material gain.</p>
+
+        <h1>Affluent</h1>
+        <i>(adjective)</i>
+        <p>Having a lot of money and wealth; wealthy.</p>
+
+        <h1>Abhor</h1>
+        <i>(verb)</i>
+        <p>To regard with extreme dislike or disgust.</p>
+
+        <h1>Adequate</h1>
+        <i>(adjective)</i>
+        <p>Enough to meet the needs or requirements; satisfactory.</p>
+
+        <h1>Accommodate</h1>
+        <i>(verb)</i>
+        <p>To provide space or help for someone or something.</p>
+
+        <h1>Anecdote</h1>
+        <i>(noun)</i>
+        <p>A short and amusing or interesting story about a real incident or person.</p>
+
+        <h1>Alleviate</h1>
+        <i>(verb)</i>
+        <p>To make a problem or pain less severe or more bearable.</p>
+
+        <h1>Affliction</h1>
+        <i>(noun)</i>
+        <p>A state of pain, suffering, or distress.</p>
+
+        <h1>Arbitrary</h1>
+        <i>(adjective)</i>
+        <p>Based on random choice or personal whim, rather than reason or system.</p>
+
+        <h1>Aggravate</h1>
+        <i>(verb)</i>
+        <p>To make a problem, situation, or condition worse or more intense.</p>
+
+        <h1>Ascend</h1>
+        <i>(verb)</i>
+        <p>To move upwards or rise to a higher position.</p>
+
+        <h1>Adversary</h1>
+        <i>(noun)</i>
+        <p>An opponent or enemy in a contest, conflict, or dispute.</p>
+
+        <h1>Admonish</h1>
+        <i>(verb)</i>
+        <p>To warn or reprimand someone firmly.</p>
+
+        <h1>Allay</h1>
+        <i>(verb)</i>
+        <p>To reduce or diminish something, especially fear or worry.</p>
+
+        <h1>Allegory</h1>
+        <i>(noun)</i>
+        <p>A symbolic representation or story in which abstract ideas are represented by characters or events.</p>
+        <br>
+        <hr> <br>
+
+        <h1>Benign</h1>
+        <i>(adjective)</i>
+        <p>Kindly; not harmful or dangerous.</p>
+
+        <h1>Belligerent</h1>
+        <i>(adjective)</i>
+        <p>Hostile and aggressive in nature; ready to fight.</p>
+
+        <h1>Benevolent</h1>
+        <i>(adjective)</i>
+        <p>Well-meaning and kindly.</p>
+
+        <h1>Blatant</h1>
+        <i>(adjective)</i>
+        <p>Done openly and unashamedly; obvious or conspicuous.</p>
+
+        <h1>Boisterous</h1>
+        <i>(adjective)</i>
+        <p>Noisy, energetic, and cheerful; rowdy.</p>
+
+        <h1>Brisk</h1>
+        <i>(adjective)</i>
+        <p>Energetic, quick, and lively.</p>
+
+        <h1>Banal</h1>
+        <i>(adjective)</i>
+        <p>So lacking in originality as to be obvious and boring.</p>
+
+        <h1>Brash</h1>
+        <i>(adjective)</i>
+        <p>Self-assertive in a rude, noisy, or overbearing way.</p>
+
+        <h1>Bliss</h1>
+        <i>(noun)</i>
+        <p>Great happiness or joy.</p>
+
+        <h1>Bequeath</h1>
+        <i>(verb)</i>
+        <p>To leave something to someone by will after one's death.</p>
+
+        <h1>Befriend</h1>
+        <i>(verb)</i>
+        <p>To act as a friend to someone; to make friends with.</p>
+
+        <h1>Bravado</h1>
+        <i>(noun)</i>
+        <p>A show of boldness or confidence intended to impress or intimidate others.</p>
+
+        <h1>Benevolence</h1>
+        <i>(noun)</i>
+        <p>The quality of being well-meaning and kind-hearted.</p>
+
+        <h1>Buffet</h1>
+        <i>(verb)</i>
+        <p>To strike or hit something repeatedly, often with force.</p>
+
+        <h1>Bulwark</h1>
+        <i>(noun)</i>
+        <p>A defensive wall or barrier, especially one used to protect or defend.</p>
+
+        <h1>Banish</h1>
+        <i>(verb)</i>
+        <p>To expel someone from a place, often as a punishment.</p>
+
+        <h1>Balmy</h1>
+        <i>(adjective)</i>
+        <p>Comfortably warm or mild, often referring to weather.</p>
+
+        <h1>Blunder</h1>
+        <i>(noun)</i>
+        <p>A stupid or careless mistake.</p>
+
+        <h1>Bygone</h1>
+        <i>(adjective)</i>
+        <p>Belonging to an earlier time or era.</p>
+
+        <h1>Barbaric</h1>
+        <i>(adjective)</i>
+        <p>Uncivilized, brutal, or savage in nature.</p>
+
+        <h1>Boastful</h1>
+        <i>(adjective)</i>
+        <p>Talking about one's achievements or possessions in a way that shows too much pride.</p>
+
+        <h1>Bustling</h1>
+        <i>(adjective)</i>
+        <p>Full of energetic and noisy activity.</p>
+
+        <h1>Beguile</h1>
+        <i>(verb)</i>
+        <p>To charm or enchant someone, often in a deceptive way.</p>
+
+        <h1>Bramble</h1>
+        <i>(noun)</i>
+        <p>A prickly shrub or bush, typically of the blackberry family.</p>
+
+        <h1>Bluster</h1>
+        <i>(verb)</i>
+        <p>To talk in a loud, aggressive, or indignant way with little effect.</p>
+
+        <h1>Broach</h1>
+        <i>(verb)</i>
+        <p>To bring up a subject for discussion.</p>
+
+        <h1>Bedlam</h1>
+        <i>(noun)</i>
+        <p>A scene of uproar and confusion.</p>
+
+        <h1>Breach</h1>
+        <i>(noun)</i>
+        <p>An act of breaking a law, rule, or agreement.</p>
+
+        <h1>Brutality</h1>
+        <i>(noun)</i>
+        <p>Savage cruelty or violence.</p>
+
+        <h1>Brackish</h1>
+        <i>(adjective)</i>
+        <p>Having a slightly salty taste, especially of water, between fresh and seawater.</p>
+        <br>
+        <hr> <br>
+
+        <h1>Cacophony</h1>
+        <i>(noun)</i>
+        <p>A harsh, discordant mixture of sounds.</p>
+
+        <h1>Capacious</h1>
+        <i>(adjective)</i>
+        <p>Having a lot of space; roomy.</p>
+
+        <h1>Caustic</h1>
+        <i>(adjective)</i>
+        <p>Severely critical or sarcastic; able to burn or corrode.</p>
+
+        <h1>Concise</h1>
+        <i>(adjective)</i>
+        <p>Brief and to the point, with no unnecessary details.</p>
+
+        <h1>Chronic</h1>
+        <i>(adjective)</i>
+        <p>Persisting for a long time or constantly recurring, especially in regard to illness.</p>
+
+        <h1>Capricious</h1>
+        <i>(adjective)</i>
+        <p>Characterized by sudden and unpredictable changes in mood or behavior.</p>
+
+        <h1>Compassionate</h1>
+        <i>(adjective)</i>
+        <p>Feeling or showing sympathy and concern for others.</p>
+
+        <h1>Clarity</h1>
+        <i>(noun)</i>
+        <p>The quality of being clear and easy to understand.</p>
+
+        <h1>Collaborate</h1>
+        <i>(verb)</i>
+        <p>To work together with others to achieve a common goal.</p>
+
+        <h1>Caress</h1>
+        <i>(verb)</i>
+        <p>To touch or stroke gently, often in a loving or affectionate manner.</p>
+
+        <h1>Concur</h1>
+        <i>(verb)</i>
+        <p>To agree or be of the same opinion.</p>
+
+        <h1>Confide</h1>
+        <i>(verb)</i>
+        <p>To trust someone with private or personal information.</p>
+
+        <h1>Chivalrous</h1>
+        <i>(adjective)</i>
+        <p>Brave, courteous, and honorable, especially toward women.</p>
+
+        <h1>Cryptic</h1>
+        <i>(adjective)</i>
+        <p>Having a hidden or mysterious meaning.</p>
+
+        <h1>Cordial</h1>
+        <i>(adjective)</i>
+        <p>Warm and friendly; sincere.</p>
+
+        <h1>Culminate</h1>
+        <i>(verb)</i>
+        <p>To reach the highest point or climax.</p>
+
+        <h1>Conundrum</h1>
+        <i>(noun)</i>
+        <p>A confusing and difficult problem or question.</p>
+
+        <h1>Cynical</h1>
+        <i>(adjective)</i>
+        <p>Believing that people are motivated by self-interest; distrustful of others' sincerity.</p>
+
+        <h1>Convivial</h1>
+        <i>(adjective)</i>
+        <p>Friendly, sociable, and marked by cheerful enjoyment.</p>
+
+        <h1>Chide</h1>
+        <i>(verb)</i>
+        <p>To scold or rebuke someone mildly but persistently.</p>
+
+        <h1>Conceal</h1>
+        <i>(verb)</i>
+        <p>To hide something from view or keep it secret.</p>
+
+        <h1>Clamor</h1>
+        <i>(noun)</i>
+        <p>A loud and confused noise, often made by a group of people.</p>
+
+        <h1>Comprehend</h1>
+        <i>(verb)</i>
+        <p>To understand or grasp the meaning of something.</p>
+
+        <h1>Critique</h1>
+        <i>(verb)</i>
+        <p>To evaluate or analyze something critically.</p>
+
+        <h1>Commence</h1>
+        <i>(verb)</i>
+        <p>To begin or start something.</p>
+
+        <h1>Chronic</h1>
+        <i>(adjective)</i>
+        <p>Continuing or occurring over a long period of time.</p>
+
+        <h1>Confound</h1>
+        <i>(verb)</i>
+        <p>To confuse or bewilder someone.</p>
+
+        <h1>Consequence</h1>
+        <i>(noun)</i>
+        <p>A result or effect, especially one that is significant or important.</p>
+
+        <h1>Cataclysm</h1>
+        <i>(noun)</i>
+        <p>A large-scale disaster or upheaval, often with widespread effects.</p>
+
+        <h1>Consolation</h1>
+        <i>(noun)</i>
+        <p>Comfort or solace offered to someone in distress or disappointment.</p> <br>
+        <br>
+    </div>
+
+
+</body>
+
+</html>

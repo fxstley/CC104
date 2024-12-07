@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.jpg">
+    <title>WORD CRAFTS | DICTIONARY</title>
+</head>
+
+<body>
+    <nav class="web">
+        <div class="codecraftsicon">
+            <img class="logo" src="icon.jpg " alt="Logo">
+        </div>
+        <div class="webname">
+            <p> WORD CRAFTS .</p>
+        </div>
+        <div class="menu" id="Menu">
+            <ul>
+                <li><a href="home.html" class="link">HOME</a></li>
+                <li><a href="dictionary.html" class="link active">DICTIONARY</a></li>
+            </ul>
+        </div>
+        <div class="close-btn">
+            <button id="close-btn" onclick="window.location.href='index.html'">X</button>
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="login-btn">Login</button>
+            <button class="btn" id="signup-btn">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <h2> Looking for </h2>
+        <ul>
+            <li><a href="ac.html">A to C</a></li>
+            <li><a href="df.html"> D to F </a></li>
+            <li><a href="htmlformatting.html">G to I</a></li>
+            <li><a href="jl.html">J to L</a></li>
+            <li><a href="mo.html">M to O</a></li>
+            <li><a href="pr.html">P to R</a></li>
+            <li><a href="su.html">S to U</a></li>
+            <li><a href="vx.html">V to X</a></li>
+            <li><a href="yz.html">Y & Z</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-button">🔍</button>
+            <button class="reset-button">✖</button>
+        </div>
+        <ul class="results-list"></ul>
+        <script>
+            const wordList = ["Yarn", "Yearn", "Yield", "Yoke", "Yonder", "Yowl",
+                "Yen", "Yip", "Yucky", "Yen", "Yawn", "Yellow",
+                "Yuppie", "Yarn", "Yippee", "Yucky", "Yodel", "Yawn",
+                "Yank", "Yogurt", "Yonder", "Yup", "Yen", "Yummy",
+                "Yob", "Yoke", "Yule", "Yam", "Yogic", "Yacht",
+                "Yapper", "Yam", "Youngster", "Yoke", "Yesteryear", "Zebra",
+                "Zest", "Zealous", "Zigzag", "Zenith", "Zero", "Zinc",
+                "Zany", "Zebra", "Zillion", "Zephyr", "Zodiac", "Zoology",
+                "Zebrawood", "Ziggurat", "Zippy", "Zonal", "Zucchini", "Zip",
+                "Zombie", "Zebra-striped", "Zestful", "Zany", "Zipline", "Zeppelin",
+                "Zipper", "Zoologist", "Zodiacs", "Zealousness", "Zero-sum", "Zircon",
+                "Zoning", "Zucchini", "Zymology"
+            ];
+
+            const searchInput = document.querySelector('.search-input');
+            const resultsList = document.querySelector('.results-list');
+            const resetButton = document.querySelector('.reset-button');
+
+            function searchAndSortWords() {
+                const query = searchInput.value.trim().toLowerCase();
+
+                if (query === '') {
+                    resultsList.innerHTML = '';
+                    return;
+                }
+
+                const filteredWords = wordList
+                    .filter(word => word.toLowerCase().startsWith(query))
+                    .sort((a, b) => a.localeCompare(b));
+
+                resultsList.innerHTML = '';
+
+                if (filteredWords.length > 0) {
+                    filteredWords.forEach(word => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = word;
+                        resultsList.appendChild(listItem);
+                    });
+                } else {
+                    resultsList.innerHTML = '<li>No results found</li>';
+                }
+            }
+
+            resetButton.addEventListener('click', () => {
+                searchInput.value = '';
+                resultsList.innerHTML = '';
+            });
+
+            searchInput.addEventListener('input', searchAndSortWords);
+        </script>
+        <h1>Yarn</h1>
+        <i>(noun)</i>
+        <p>A long, continuous length of interlocked fibers, often used in knitting or weaving.</p>
+
+        <h1>Yearn</h1>
+        <i>(verb)</i>
+        <p>To have an intense longing or desire for something.</p>
+
+        <h1>Yield</h1>
+        <i>(verb)</i>
+        <p>To produce or provide something as a result of effort or process.</p>
+
+        <h1>Yoke</h1>
+        <i>(noun)</i>
+        <p>A wooden frame used to join two animals together, especially oxen, for plowing or pulling.</p>
+
+        <h1>Yonder</h1>
+        <i>(adverb)</i>
+        <p>At or in that place, especially at a distance.</p>
+
+        <h1>Yowl</h1>
+        <i>(verb)</i>
+        <p>To make a loud, wailing cry, especially of pain or distress.</p>
+
+        <h1>Yen</h1>
+        <i>(noun)</i>
+        <p>A strong desire or craving for something.</p>
+
+        <h1>Yip</h1>
+        <i>(verb)</i>
+        <p>To make a short, sharp cry or sound, often by a small dog.</p>
+
+        <h1>Yucky</h1>
+        <i>(adjective)</i>
+        <p>Disgusting or unpleasant in taste or appearance.</p>
+
+        <h1>Yen</h1>
+        <i>(noun)</i>
+        <p>A strong desire or craving, particularly for something foreign or exotic.</p>
+
+        <h1>Yawn</h1>
+        <i>(verb)</i>
+        <p>To open the mouth wide and inhale deeply, often due to tiredness or boredom.</p>
+
+        <h1>Yellow</h1>
+        <i>(adjective)</i>
+        <p>Having the color of ripe lemons or sunflowers.</p>
+
+        <h1>Yuppie</h1>
+        <i>(noun)</i>
+        <p>A young, urban professional, often associated with affluence and materialism.</p>
+
+        <h1>Yarn</h1>
+        <i>(noun)</i>
+        <p>A continuous thread of material used for weaving or knitting.</p>
+
+        <h1>Yippee</h1>
+        <i>(interjection)</i>
+        <p>An exclamation of joy or excitement.</p>
+
+        <h1>Yucky</h1>
+        <i>(adjective)</i>
+        <p>Disgusting or unpleasant in appearance or taste.</p>
+
+        <h1>Yodel</h1>
+        <i>(verb)</i>
+        <p>To sing or call with a rapid change of pitch, especially in a high voice.</p>
+
+        <h1>Yawn</h1>
+        <i>(verb)</i>
+        <p>To open the mouth wide and breathe in deeply due to tiredness or boredom.</p>
+
+        <h1>Yank</h1>
+        <i>(verb)</i>
+        <p>To pull something with a sharp or sudden motion.</p>
+
+        <h1>Yogurt</h1>
+        <i>(noun)</i>
+        <p>A dairy product made by fermenting milk with bacterial cultures.</p>
+
+        <h1>Yonder</h1>
+        <i>(adverb)</i>
+        <p>At or in that place, especially at a distance.</p>
+
+        <h1>Yup</h1>
+        <i>(interjection)</i>
+        <p>An informal way of saying yes.</p>
+
+        <h1>Yen</h1>
+        <i>(noun)</i>
+        <p>A strong desire or craving, especially for something specific.</p>
+
+        <h1>Yummy</h1>
+        <i>(adjective)</i>
+        <p>Delicious, especially in terms of food.</p>
+
+        <h1>Yob</h1>
+        <i>(noun)</i>
+        <p>A young man who behaves in a rough, aggressive, or uncouth manner.</p>
+
+        <h1>Yoke</h1>
+        <i>(noun)</i>
+        <p>A wooden frame that joins two animals, especially oxen, for plowing or pulling.</p>
+
+        <h1>Yule</h1>
+        <i>(noun)</i>
+        <p>The Christmas season, especially in ancient or poetic contexts.</p>
+
+        <h1>Yam</h1>
+        <i>(noun)</i>
+        <p>A starchy root vegetable often confused with sweet potatoes.</p>
+
+        <h1>Yogic</h1>
+        <i>(adjective)</i>
+        <p>Relating to yoga or the practices of yoga.</p>
+
+        <h1>Yacht</h1>
+        <i>(noun)</i>
+        <p>A large, luxurious boat or ship, often used for recreation.</p>
+
+        <h1>Yapper</h1>
+        <i>(noun)</i>
+        <p>A person or animal that talks or makes noise constantly.</p>
+
+        <h1>Yam</h1>
+        <i>(noun)</i>
+        <p>A type of edible tuber that belongs to the genus Dioscorea.</p>
+
+        <h1>Youngster</h1>
+        <i>(noun)</i>
+        <p>A young person or child.</p>
+
+        <h1>Yoke</h1>
+        <i>(noun)</i>
+        <p>A device used to join together animals for working, such as oxen for plowing.</p>
+
+        <h1>Yesteryear</h1>
+        <i>(noun)</i>
+        <p>The past, especially in reference to a time long ago.</p>
+        <br>
+        <hr> <br>
+        <h1>Zebra</h1>
+        <i>(noun)</i>
+        <p>A wild animal related to the horse, known for its black and white stripes.</p>
+
+        <h1>Zest</h1>
+        <i>(noun)</i>
+        <p>Great enthusiasm and energy, especially for something enjoyable or exciting.</p>
+
+        <h1>Zealous</h1>
+        <i>(adjective)</i>
+        <p>Having or showing great energy or enthusiasm in pursuit of a cause or objective.</p>
+
+        <h1>Zigzag</h1>
+        <i>(noun)</i>
+        <p>A pattern or path characterized by sharp turns in alternating directions.</p>
+
+        <h1>Zenith</h1>
+        <i>(noun)</i>
+        <p>The highest point or peak of something, especially in terms of success or achievement.</p>
+
+        <h1>Zero</h1>
+        <i>(noun)</i>
+        <p>The number representing no quantity or magnitude.</p>
+
+        <h1>Zinc</h1>
+        <i>(noun)</i>
+        <p>A metallic element used in making alloys and galvanizing iron and steel.</p>
+
+        <h1>Zany</h1>
+        <i>(adjective)</i>
+        <p>Funny or amusing in an absurd or silly way.</p>
+
+        <h1>Zebra</h1>
+        <i>(noun)</i>
+        <p>A horse-like mammal with black and white striped fur, native to Africa.</p>
+
+        <h1>Zillion</h1>
+        <i>(noun)</i>
+        <p>An indefinitely large number; used informally to refer to a huge quantity.</p>
+
+        <h1>Zephyr</h1>
+        <i>(noun)</i>
+        <p>A gentle breeze, especially one from the west.</p>
+
+        <h1>Zodiac</h1>
+        <i>(noun)</i>
+        <p>A circle of twelve 30° divisions of celestial longitude that are centered upon the ecliptic.</p>
+
+        <h1>Zoology</h1>
+        <i>(noun)</i>
+        <p>The scientific study of animals, including their biology, behavior, and classification.</p>
+
+        <h1>Zebrawood</h1>
+        <i>(noun)</i>
+        <p>A type of wood known for its distinctive dark and light stripes, used in furniture making.</p>
+
+        <h1>Ziggurat</h1>
+        <i>(noun)</i>
+        <p>A type of massive structure built in ancient Mesopotamia, resembling a stepped pyramid.</p>
+
+        <h1>Zippy</h1>
+        <i>(adjective)</i>
+        <p>Fast, energetic, or lively.</p>
+
+        <h1>Zonal</h1>
+        <i>(adjective)</i>
+        <p>Relating to or characterized by a zone or distinct region.</p>
+
+        <h1>Zucchini</h1>
+        <i>(noun)</i>
+        <p>A type of summer squash, often used in cooking, also called courgette in some countries.</p>
+
+        <h1>Zip</h1>
+        <i>(verb)</i>
+        <p>To fasten or close with a zipper.</p>
+
+        <h1>Zombie</h1>
+        <i>(noun)</i>
+        <p>An undead being, often depicted in folklore or horror fiction, who is reanimated after death.</p>
+
+        <h1>Zebra-striped</h1>
+        <i>(adjective)</i>
+        <p>Having black and white stripes similar to those of a zebra.</p>
+
+        <h1>Zestful</h1>
+        <i>(adjective)</i>
+        <p>Full of enthusiasm or energy; vibrant and spirited.</p>
+
+        <h1>Zany</h1>
+        <i>(adjective)</i>
+        <p>Crazy or eccentric in an amusing way.</p>
+
+        <h1>Zipline</h1>
+        <i>(noun)</i>
+        <p>A system of cables, often used for recreation, allowing people to travel from one point to another by sliding
+            along the cable.</p>
+
+        <h1>Zeppelin</h1>
+        <i>(noun)</i>
+        <p>A type of rigid airship, typically filled with gas and used for transport or military purposes.</p>
+
+        <h1>Zipper</h1>
+        <i>(noun)</i>
+        <p>A fastening device consisting of two strips of fabric with interlocking metal or plastic teeth that can be
+            closed or opened using a sliding mechanism.</p>
+
+        <h1>Zoologist</h1>
+        <i>(noun)</i>
+        <p>A scientist who studies animals and their behavior, biology, and ecology.</p>
+
+        <h1>Zodiacs</h1>
+        <i>(noun)</i>
+        <p>The twelve constellations or signs used in astrology, associated with specific periods of the year.</p>
+
+        <h1>Zealousness</h1>
+        <i>(noun)</i>
+        <p>The quality of being full of zeal; great energy or enthusiasm in pursuit of a cause or objective.</p>
+
+        <h1>Zero-sum</h1>
+        <i>(adjective)</i>
+        <p>Describing a situation in which one person's gain is exactly balanced by another person's loss.</p>
+
+        <h1>Zircon</h1>
+        <i>(noun)</i>
+        <p>A mineral used as a gemstone, known for its brilliance and range of colors.</p>
+
+        <h1>Zoning</h1>
+        <i>(noun)</i>
+        <p>The process of dividing land into zones for different types of usage (e.g., residential, commercial).</p>
+
+        <h1>Zucchini</h1>
+        <i>(noun)</i>
+        <p>A type of squash often used in cooking, typically green and shaped like a cucumber.</p>
+
+        <h1>Zymology</h1>
+        <i>(noun)</i>
+        <p>The study of fermentation processes in food and beverages.</p>
+        <br>
+    </div>
+
+</body>
+
+</html>

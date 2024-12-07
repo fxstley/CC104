@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.jpg">
+    <title>WORD CRAFTS | DICTIONARY</title>
+</head>
+
+<body>
+    <nav class="web">
+        <div class="codecraftsicon">
+            <img class="logo" src="icon.jpg " alt="Logo">
+        </div>
+        <div class="webname">
+            <p> WORD CRAFTS .</p>
+        </div>
+        <div class="menu" id="Menu">
+            <ul>
+                <li><a href="home.html" class="link">HOME</a></li>
+                <li><a href="dictionary.html" class="link active">DICTIONARY</a></li>
+            </ul>
+        </div>
+        <div class="close-btn">
+            <button id="close-btn" onclick="window.location.href='index.html'">X</button>
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="login-btn">Login</button>
+            <button class="btn" id="signup-btn">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <h2> Looking for </h2>
+        <ul>
+            <li><a href="ac.html">A to C</a></li>
+            <li><a href="df.html"> D to F </a></li>
+            <li><a href="htmlformatting.html">G to I</a></li>
+            <li><a href="jl.html">J to L</a></li>
+            <li><a href="mo.html">M to O</a></li>
+            <li><a href="pr.html">P to R</a></li>
+            <li><a href="su.html">S to U</a></li>
+            <li><a href="vx.html">V to X</a></li>
+            <li><a href="yz.html">Y & Z</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-button">🔍</button>
+            <button class="reset-button">✖</button>
+        </div>
+        <ul class="results-list"></ul>
+        <script>
+            const wordList = ["Vacuous", "Venerate", "Voracious", "Vivacious", "Vulnerable", "Vast",
+                "Vicarious", "Vague", "Vehement", "Vex", "Veracious", "Vindicate",
+                "Vigilant", "Vexing", "Volatile", "Vocal", "Vibrant", "Vouch",
+                "Vocalize", "Voracity", "Vestige", "Vigilance", "Venture", "Vivid",
+                "Vulnerably", "Valiant", "Vivify", "Variegated", "Vernacular", "Vocalist",
+                "Verity", "Vexation", "Viral", "Vibrancy", "Wistful", "Warrant",
+                "Whimsical", "Wield", "Wary", "Worship", "Warranted", "Wretched",
+                "Waddle", "Wreak", "Warranted", "Wholesome", "Wicked", "Wisp",
+                "Warrantable", "Widespread", "Wit", "Whip", "Wrench", "Welfare",
+                "Witty", "Waive", "Warrantless", "Witless", "Wander", "Wallow",
+                "Whisk", "Warranting", "Wily", "Wielding", "Wriggle", "Wade",
+                "Warranties", "Xenophobic", "Xenon", "Xerox", "Xylophone", "Xenogenesis",
+                "Xenolith", "Xylography", "Xenial", "Xylose", "Xanthic", "Xenotransplantation",
+                "Xenograft", "Xenotropic", "Xylophilous", "Xeriscape", "Xanthophyll", "Xenodocheionology",
+                "Xenium", "Xenic", "Examine", "Xerophilous", "Xylocarp", "Xenogenesis",
+                "Xenium", "Xerothermic", "Xenocryst", "Xanadu", "Xystus", "Xenogenesis"];
+
+            const searchInput = document.querySelector('.search-input');
+            const resultsList = document.querySelector('.results-list');
+            const resetButton = document.querySelector('.reset-button');
+
+            function searchAndSortWords() {
+                const query = searchInput.value.trim().toLowerCase();
+
+                if (query === '') {
+                    resultsList.innerHTML = '';
+                    return;
+                }
+
+                const filteredWords = wordList
+                    .filter(word => word.toLowerCase().startsWith(query))
+                    .sort((a, b) => a.localeCompare(b));
+
+                resultsList.innerHTML = '';
+
+                if (filteredWords.length > 0) {
+                    filteredWords.forEach(word => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = word;
+                        resultsList.appendChild(listItem);
+                    });
+                } else {
+                    resultsList.innerHTML = '<li>No results found</li>';
+                }
+            }
+
+            resetButton.addEventListener('click', () => {
+                searchInput.value = '';
+                resultsList.innerHTML = '';
+            });
+
+            searchInput.addEventListener('input', searchAndSortWords);
+        </script>
+        <h1>Vacuous</h1>
+        <i>(adjective)</i>
+        <p>Lacking thought or intelligence; empty-headed.</p>
+
+        <h1>Venerate</h1>
+        <i>(verb)</i>
+        <p>To regard with deep respect or reverence.</p>
+
+        <h1>Voracious</h1>
+        <i>(adjective)</i>
+        <p>Having a very eager approach to an activity, especially eating.</p>
+
+        <h1>Vivacious</h1>
+        <i>(adjective)</i>
+        <p>Full of life and energy; lively.</p>
+
+        <h1>Vulnerable</h1>
+        <i>(adjective)</i>
+        <p>Susceptible to physical or emotional harm or attack.</p>
+
+        <h1>Vast</h1>
+        <i>(adjective)</i>
+        <p>Of very great extent or size; immense.</p>
+
+        <h1>Vicarious</h1>
+        <i>(adjective)</i>
+        <p>Experienced or felt by watching, hearing, or reading about someone else's actions or experiences.</p>
+
+        <h1>Vague</h1>
+        <i>(adjective)</i>
+        <p>Unclear or imprecise in meaning.</p>
+
+        <h1>Vehement</h1>
+        <i>(adjective)</i>
+        <p>Showing strong feelings or forceful expression.</p>
+
+        <h1>Vex</h1>
+        <i>(verb)</i>
+        <p>To annoy, frustrate, or worry someone.</p>
+
+        <h1>Veracious</h1>
+        <i>(adjective)</i>
+        <p>Habitually truthful or accurate.</p>
+
+        <h1>Vindicate</h1>
+        <i>(verb)</i>
+        <p>To clear someone of blame or suspicion; to justify or prove the worth of something.</p>
+
+        <h1>Vigilant</h1>
+        <i>(adjective)</i>
+        <p>Watchful, especially to avoid danger or risk.</p>
+
+        <h1>Vexing</h1>
+        <i>(adjective)</i>
+        <p>Causing annoyance, frustration, or worry.</p>
+
+        <h1>Volatile</h1>
+        <i>(adjective)</i>
+        <p>Likely to change suddenly and unpredictably; unstable.</p>
+
+        <h1>Vocal</h1>
+        <i>(adjective)</i>
+        <p>Expressing opinions freely and openly.</p>
+
+        <h1>Vibrant</h1>
+        <i>(adjective)</i>
+        <p>Full of energy and life; vivid and bright in color.</p>
+
+        <h1>Vouch</h1>
+        <i>(verb)</i>
+        <p>To confirm or assert that something is true, often based on personal knowledge.</p>
+
+        <h1>Vocalize</h1>
+        <i>(verb)</i>
+        <p>To express something in words, especially to speak out loud.</p>
+
+        <h1>Voracity</h1>
+        <i>(noun)</i>
+        <p>The quality of being exceedingly hungry or greedy, especially for knowledge.</p>
+
+        <h1>Vestige</h1>
+        <i>(noun)</i>
+        <p>A trace or remnant of something that once existed.</p>
+
+        <h1>Vigilance</h1>
+        <i>(noun)</i>
+        <p>The action or state of being alert and watchful to detect potential danger or trouble.</p>
+
+        <h1>Venture</h1>
+        <i>(verb)</i>
+        <p>To undertake a risky or daring journey or activity.</p>
+
+        <h1>Vivid</h1>
+        <i>(adjective)</i>
+        <p>Producing strong, clear images or impressions; very bright and colorful.</p>
+
+        <h1>Vulnerably</h1>
+        <i>(adverb)</i>
+        <p>In a manner that is susceptible to harm or attack.</p>
+
+        <h1>Valiant</h1>
+        <i>(adjective)</i>
+        <p>Having or showing courage or determination.</p>
+
+        <h1>Vivify</h1>
+        <i>(verb)</i>
+        <p>To bring something to life or make it more vivid.</p>
+
+        <h1>Variegated</h1>
+        <i>(adjective)</i>
+        <p>Having different colors or markings; varied in appearance.</p>
+
+        <h1>Vernacular</h1>
+        <i>(noun)</i>
+        <p>The language or dialect spoken by the ordinary people in a particular country or region.</p>
+
+        <h1>Vocalist</h1>
+        <i>(noun)</i>
+        <p>A singer, especially one who performs in a group.</p>
+
+        <h1>Verity</h1>
+        <i>(noun)</i>
+        <p>The state of being true or real; truthfulness.</p>
+
+        <h1>Vexation</h1>
+        <i>(noun)</i>
+        <p>The state of being annoyed or frustrated.</p>
+
+        <h1>Viral</h1>
+        <i>(adjective)</i>
+        <p>Relating to or caused by a virus; also refers to something becoming widely popular on the internet.</p>
+
+        <h1>Vibrancy</h1>
+        <i>(noun)</i>
+        <p>The quality of being full of energy and life; brightness.</p>
+        <br>
+        <hr> <br>
+        <h1>Wistful</h1>
+        <i>(adjective)</i>
+        <p>Longing for something that is lost or impossible to attain.</p>
+
+        <h1>Warrant</h1>
+        <i>(noun)</i>
+        <p>A legal document authorizing law enforcement to perform a search or seizure.</p>
+
+        <h1>Whimsical</h1>
+        <i>(adjective)</i>
+        <p>Playfully quaint or fanciful, especially in an amusing way.</p>
+
+        <h1>Wield</h1>
+        <i>(verb)</i>
+        <p>To hold and use something, especially a weapon or tool.</p>
+
+        <h1>Wary</h1>
+        <i>(adjective)</i>
+        <p>Feeling cautious or suspicious about something.</p>
+
+        <h1>Worship</h1>
+        <i>(verb)</i>
+        <p>To show reverence and adoration for a deity or higher power.</p>
+
+        <h1>Warranted</h1>
+        <i>(adjective)</i>
+        <p>Justified or deserved; supported by evidence or reason.</p>
+
+        <h1>Wretched</h1>
+        <i>(adjective)</i>
+        <p>In a very unhappy or unfortunate state.</p>
+
+        <h1>Waddle</h1>
+        <i>(verb)</i>
+        <p>To walk with short steps, swaying from side to side, typically used for animals like ducks.</p>
+
+        <h1>Wreak</h1>
+        <i>(verb)</i>
+        <p>To cause something to happen, especially something destructive or violent.</p>
+
+        <h1>Warranted</h1>
+        <i>(adjective)</i>
+        <p>Justified, legitimate, or necessary.</p>
+
+        <h1>Wholesome</h1>
+        <i>(adjective)</i>
+        <p>Conducive to health or well-being; morally good or healthy.</p>
+
+        <h1>Wicked</h1>
+        <i>(adjective)</i>
+        <p>Morally wrong or evil; mischievous or playful in a humorous way.</p>
+
+        <h1>Wisp</h1>
+        <i>(noun)</i>
+        <p>A small thin or twisted bunch, piece, or trace of something.</p>
+
+        <h1>Warrantable</h1>
+        <i>(adjective)</i>
+        <p>Capable of being justified or deserved.</p>
+
+        <h1>Widespread</h1>
+        <i>(adjective)</i>
+        <p>Occurring over a large area or among a large group of people.</p>
+
+        <h1>Wit</h1>
+        <i>(noun)</i>
+        <p>The ability to make intelligent, amusing, or insightful comments or jokes.</p>
+
+        <h1>Whip</h1>
+        <i>(verb)</i>
+        <p>To strike or beat something or someone with a quick, sharp motion.</p>
+
+        <h1>Wrench</h1>
+        <i>(noun)</i>
+        <p>A tool used for gripping and turning objects like bolts or nuts.</p>
+
+        <h1>Welfare</h1>
+        <i>(noun)</i>
+        <p>The health, happiness, and fortunes of a person or group.</p>
+
+        <h1>Witty</h1>
+        <i>(adjective)</i>
+        <p>Showing quick and inventive verbal humor.</p>
+
+        <h1>Waive</h1>
+        <i>(verb)</i>
+        <p>To refrain from insisting on or enforcing something, like a right or claim.</p>
+
+        <h1>Warrantless</h1>
+        <i>(adjective)</i>
+        <p>Not supported by a legal warrant.</p>
+
+        <h1>Witless</h1>
+        <i>(adjective)</i>
+        <p>Lacking intelligence or common sense.</p>
+
+        <h1>Wander</h1>
+        <i>(verb)</i>
+        <p>To move or travel aimlessly, without a fixed destination.</p>
+
+        <h1>Wallow</h1>
+        <i>(verb)</i>
+        <p>To roll or lie about in a relaxed or self-indulgent way.</p>
+
+        <h1>Whisk</h1>
+        <i>(verb)</i>
+        <p>To move quickly and lightly, often in a sweeping motion.</p>
+
+        <h1>Warranting</h1>
+        <i>(verb)</i>
+        <p>To justify or make necessary something, such as an action or decision.</p>
+
+        <h1>Wily</h1>
+        <i>(adjective)</i>
+        <p>Full of clever tricks or cunning.</p>
+
+        <h1>Wielding</h1>
+        <i>(verb)</i>
+        <p>The act of holding and using a weapon, tool, or influence.</p>
+
+        <h1>Wriggle</h1>
+        <i>(verb)</i>
+        <p>To twist or move with quick, small movements.</p>
+
+        <h1>Wade</h1>
+        <i>(verb)</i>
+        <p>To walk through water or another substance with difficulty.</p>
+
+        <h1>Warranties</h1>
+        <i>(noun)</i>
+        <p>Written guarantees provided for a product's quality or service.</p>
+        <br>
+        <hr> <br>
+
+        <h1>Xenophobic</h1>
+        <i>(adjective)</i>
+        <p>Having a fear or dislike of people from other countries or cultures.</p>
+
+        <h1>Xenon</h1>
+        <i>(noun)</i>
+        <p>A colorless, odorless, and inert gas used in certain types of lighting and technology.</p>
+
+        <h1>Xerox</h1>
+        <i>(verb)</i>
+        <p>To make a copy of a document using a photocopier.</p>
+
+        <h1>Xylophone</h1>
+        <i>(noun)</i>
+        <p>A musical instrument with wooden bars that are struck with mallets to produce sound.</p>
+
+        <h1>Xenogenesis</h1>
+        <i>(noun)</i>
+        <p>The production of offspring that are significantly different from their parents, especially in genetics.</p>
+
+        <h1>Xenolith</h1>
+        <i>(noun)</i>
+        <p>A rock fragment found in another type of rock.</p>
+
+        <h1>Xylography</h1>
+        <i>(noun)</i>
+        <p>The art of engraving or carving on wood.</p>
+
+        <h1>Xenial</h1>
+        <i>(adjective)</i>
+        <p>Relating to the relationship between a guest and host, especially in terms of hospitality.</p>
+
+        <h1>Xylose</h1>
+        <i>(noun)</i>
+        <p>A type of sugar found in wood and plants.</p>
+
+        <h1>Xanthic</h1>
+        <i>(adjective)</i>
+        <p>Relating to or having a yellow color.</p>
+
+        <h1>Xenotransplantation</h1>
+        <i>(noun)</i>
+        <p>The transplantation of organs or tissues between different species.</p>
+
+        <h1>Xenograft</h1>
+        <i>(noun)</i>
+        <p>An organ or tissue transplant between individuals of different species.</p>
+
+        <h1>Xenotropic</h1>
+        <i>(adjective)</i>
+        <p>Referring to an organism that can grow in a host from another species.</p>
+
+        <h1>Xylophilous</h1>
+        <i>(adjective)</i>
+        <p>Attracted to or living in wood.</p>
+
+        <h1>Xeriscape</h1>
+        <i>(noun)</i>
+        <p>A style of landscaping that reduces or eliminates the need for irrigation.</p>
+
+        <h1>Xanthophyll</h1>
+        <i>(noun)</i>
+        <p>A type of pigment responsible for the yellow color in plants.</p>
+
+        <h1>Xenodocheionology</h1>
+        <i>(noun)</i>
+        <p>The study of the art of receiving strangers in a way that fosters hospitality.</p>
+
+        <h1>Xenium</h1>
+        <i>(noun)</i>
+        <p>A gift given to a guest or visitor.</p>
+
+        <h1>Xenic</h1>
+        <i>(adjective)</i>
+        <p>Referring to or involving organisms from different species living together.</p>
+
+        <h1>Examine</h1>
+        <i>(verb)</i>
+        <p>To inspect or look at something carefully in order to learn about it.</p>
+
+        <h1>Xerophilous</h1>
+        <i>(adjective)</i>
+        <p>Adapted to dry conditions, especially in terms of plants.</p>
+
+        <h1>Xylocarp</h1>
+        <i>(noun)</i>
+        <p>A type of fruit, such as a coconut, that has a hard woody shell.</p>
+
+        <h1>Xenogenesis</h1>
+        <i>(noun)</i>
+        <p>The production of offspring significantly different from their parents, especially in genetics.</p>
+
+        <h1>Xenium</h1>
+        <i>(noun)</i>
+        <p>A gift given to a guest or visitor.</p>
+
+        <h1>Xerothermic</h1>
+        <i>(adjective)</i>
+        <p>Adapted to hot and dry climates.</p>
+
+        <h1>Xenocryst</h1>
+        <i>(noun)</i>
+        <p>A mineral that is foreign to the rock in which it is found.</p>
+
+        <h1>Xanadu</h1>
+        <i>(noun)</i>
+        <p>An idyllic, luxurious place, often referring to a utopia.</p>
+
+        <h1>Xystus</h1>
+        <i>(noun)</i>
+        <p>A covered walkway or portico in ancient Greek and Roman architecture.</p>
+
+        <h1>Xenogenesis</h1>
+        <i>(noun)</i>
+        <p>The production of offspring different from their parents, especially in the context of genetics.</p>
+        <br>
+    </div>
+
+</body>
+
+</html>

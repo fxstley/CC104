@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.jpg">
+    <title>WORD CRAFTS | DICTIONARY</title>
+</head>
+
+<body>
+    <nav class="web">
+        <div class="codecraftsicon">
+            <img class="logo" src="icon.jpg " alt="Logo">
+        </div>
+        <div class="webname">
+            <p> WORD CRAFTS .</p>
+        </div>
+        <div class="menu" id="Menu">
+            <ul>
+                <li><a href="home.html" class="link">HOME</a></li>
+                <li><a href="dictionary.html" class="link active">DICTIONARY</a></li>
+            </ul>
+        </div>
+        <div class="close-btn">
+            <button id="close-btn" onclick="window.location.href='index.html'">X</button>
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="login-btn">Login</button>
+            <button class="btn" id="signup-btn">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <h2> Looking for </h2>
+        <ul>
+            <li><a href="ac.html">A to C</a></li>
+            <li><a href="df.html"> D to F </a></li>
+            <li><a href="gi.html">G to I</a></li>
+            <li><a href="jl.html">J to L</a></li>
+            <li><a href="mo.html">M to O</a></li>
+            <li><a href="pr.html">P to R</a></li>
+            <li><a href="su.html">S to U</a></li>
+            <li><a href="vx.html">V to X</a></li>
+            <li><a href="yz.html">Y & Z</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-button">🔍</button>
+            <button class="reset-button">✖</button>
+        </div>
+        <ul class="results-list"></ul>
+        <script>
+            const wordList = ["Daunt", "Defenestration", "Diligent", "Denigrate", "Defer", "Dogmatic",
+                "Dormant", "Disconcerting", "Debilitate", "Deteriorate", "Dwindle", "Disparate", "Discretion",
+                "Disrupt", "Deft", "Decimate", "Demonstrative", "Divulge", "Deflect", "Dissuade",
+                "Distill", "Disclose", "Disband", "Dominion", "Devoid", "Defy", "Dubious", "Delirious",
+                "Discomfit", "Debunk", "Detrimental", "Disseminate", "Damp", "Emulate", "Enervate",
+                "Enigmatic", "Eradicate", "Empathy", "Exuberant", "Eloquent", "Exemplify", "Exacerbate",
+                "Erratic", "Exonerate", "Exuberance", "Entourage", "Exile", "Equivocate", "Enrich",
+                "Exhort", "Epitome", "Enthrall", "Exemplary", "Evasive", "Endorse", "Enrapture",
+                "Exultant", "Exquisite", "Extol", "Effervescent", "Envelop", "Exceed", "Eccentric",
+                "Exemplify", "Entangle", "Embellish", "Elude", "Facilitate", "Flabbergasted", "Fervent",
+                "Frivolous", "Finesse", "Fortuitous", "Fluctuate", "Fathom", "Frugal", "Fervor", "Frightful",
+                "Foster", "Futile", "Flimsy", "Formidable", "Feign", "Fiasco", "Fractious", "Facile",
+                "Foment", "Feasible", "Flatter", "Feeble", "Furious", "Fallacious", "Foster", "Frantic",
+                "Franchise", "Fledge", "Flourish", "Fatuous", "Fidget"];
+
+            const searchInput = document.querySelector('.search-input');
+            const resultsList = document.querySelector('.results-list');
+            const resetButton = document.querySelector('.reset-button');
+
+            function searchAndSortWords() {
+                const query = searchInput.value.trim().toLowerCase();
+
+                if (query === '') {
+                    resultsList.innerHTML = '';
+                    return;
+                }
+
+                const filteredWords = wordList
+                    .filter(word => word.toLowerCase().startsWith(query))
+                    .sort((a, b) => a.localeCompare(b));
+
+                resultsList.innerHTML = '';
+
+                if (filteredWords.length > 0) {
+                    filteredWords.forEach(word => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = word;
+                        resultsList.appendChild(listItem);
+                    });
+                } else {
+                    resultsList.innerHTML = '<li>No results found</li>';
+                }
+            }
+
+            resetButton.addEventListener('click', () => {
+                searchInput.value = '';
+                resultsList.innerHTML = '';
+            });
+
+            searchInput.addEventListener('input', searchAndSortWords);
+        </script>
+        <h1>Daunt</h1>
+        <i>(verb)</i>
+        <p>To make someone feel intimidated or discouraged.</p>
+
+        <h1>Defenestration</h1>
+        <i>(noun)</i>
+        <p>The act of throwing someone or something out of a window.</p>
+
+        <h1>Diligent</h1>
+        <i>(adjective)</i>
+        <p>Showing care and effort in one's work or duties.</p>
+
+        <h1>Denigrate</h1>
+        <i>(verb)</i>
+        <p>To criticize unfairly or speak about someone in a derogatory manner.</p>
+
+        <h1>Defer</h1>
+        <i>(verb)</i>
+        <p>To postpone or delay an action or decision.</p>
+
+        <h1>Dogmatic</h1>
+        <i>(adjective)</i>
+        <p>Being stubbornly fixed in one's beliefs or opinions, often without consideration of others' views.</p>
+
+        <h1>Dormant</h1>
+        <i>(adjective)</i>
+        <p>In a state of rest or inactivity, temporarily inactive.</p>
+
+        <h1>Disconcerting</h1>
+        <i>(adjective)</i>
+        <p>Causing discomfort or confusion; unsettling.</p>
+
+        <h1>Debilitate</h1>
+        <i>(verb)</i>
+        <p>To weaken or impair the strength or vitality of something or someone.</p>
+
+        <h1>Deteriorate</h1>
+        <i>(verb)</i>
+        <p>To decline in quality or condition over time.</p>
+
+        <h1>Dwindle</h1>
+        <i>(verb)</i>
+        <p>To decrease or diminish gradually in size, amount, or strength.</p>
+
+        <h1>Disparate</h1>
+        <i>(adjective)</i>
+        <p>Fundamentally different or distinct in kind or nature.</p>
+
+        <h1>Discretion</h1>
+        <i>(noun)</i>
+        <p>The freedom to make decisions or judgments with care and prudence.</p>
+
+        <h1>Disrupt</h1>
+        <i>(verb)</i>
+        <p>To interrupt or disturb the normal flow or functioning of something.</p>
+
+        <h1>Deft</h1>
+        <i>(adjective)</i>
+        <p>Skillful and quick in movement or action.</p>
+
+        <h1>Decimate</h1>
+        <i>(verb)</i>
+        <p>To destroy a large proportion of something.</p>
+
+        <h1>Demonstrative</h1>
+        <i>(adjective)</i>
+        <p>Openly expressive of feelings or emotions.</p>
+
+        <h1>Divulge</h1>
+        <i>(verb)</i>
+        <p>To reveal or disclose something, especially information that was meant to be kept secret.</p>
+
+        <h1>Deflect</h1>
+        <i>(verb)</i>
+        <p>To cause something to change direction or avoid its intended target.</p>
+
+        <h1>Dissuade</h1>
+        <i>(verb)</i>
+        <p>To persuade someone not to do something.</p>
+
+        <h1>Distill</h1>
+        <i>(verb)</i>
+        <p>To purify or extract the essential elements of something, especially liquid or information.</p>
+
+        <h1>Disclose</h1>
+        <i>(verb)</i>
+        <p>To make information or a secret known to others.</p>
+
+        <h1>Disband</h1>
+        <i>(verb)</i>
+        <p>To break up or dissolve a group or organization.</p>
+
+        <h1>Dominion</h1>
+        <i>(noun)</i>
+        <p>The territory or control over a particular area or group.</p>
+
+        <h1>Devoid</h1>
+        <i>(adjective)</i>
+        <p>Completely lacking or free from something.</p>
+
+        <h1>Defy</h1>
+        <i>(verb)</i>
+        <p>To resist or challenge authority, rules, or norms.</p>
+
+        <h1>Dubious</h1>
+        <i>(adjective)</i>
+        <p>Hesitant or uncertain about something; skeptical.</p>
+
+        <h1>Delirious</h1>
+        <i>(adjective)</i>
+        <p>In a state of confusion, often due to fever or intense emotions.</p>
+
+        <h1>Discomfit</h1>
+        <i>(verb)</i>
+        <p>To make someone feel uncomfortable, embarrassed, or defeated.</p>
+
+        <h1>Debunk</h1>
+        <i>(verb)</i>
+        <p>To expose the falseness or lack of validity of something.</p>
+
+        <h1>Detrimental</h1>
+        <i>(adjective)</i>
+        <p>Causing harm, damage, or disadvantage.</p>
+
+        <h1>Disseminate</h1>
+        <i>(verb)</i>
+        <p>To spread or distribute something widely, especially information or knowledge.</p>
+
+        <h1>Damp</h1>
+        <i>(adjective)</i>
+        <p>Moderately wet or moist, often with a slight chill.</p>
+        <br>
+        <hr> <br>
+
+        <h1>Emulate</h1>
+        <i>(verb)</i>
+        <p>To imitate or copy someone’s actions or achievements.</p>
+
+        <h1>Enervate</h1>
+        <i>(verb)</i>
+        <p>To drain someone’s energy or vitality.</p>
+
+        <h1>Enigmatic</h1>
+        <i>(adjective)</i>
+        <p>Mysterious, puzzling, or difficult to understand.</p>
+
+        <h1>Eradicate</h1>
+        <i>(verb)</i>
+        <p>To completely destroy or eliminate something.</p>
+
+        <h1>Empathy</h1>
+        <i>(noun)</i>
+        <p>The ability to understand and share the feelings of another person.</p>
+
+        <h1>Exuberant</h1>
+        <i>(adjective)</i>
+        <p>Full of energy, excitement, and enthusiasm.</p>
+
+        <h1>Eloquent</h1>
+        <i>(adjective)</i>
+        <p>Fluent or persuasive in speaking or writing.</p>
+
+        <h1>Exemplify</h1>
+        <i>(verb)</i>
+        <p>To illustrate or clarify by giving an example.</p>
+
+        <h1>Exacerbate</h1>
+        <i>(verb)</i>
+        <p>To make a situation or condition worse.</p>
+
+        <h1>Erratic</h1>
+        <i>(adjective)</i>
+        <p>Unpredictable or inconsistent in behavior or action.</p>
+
+        <h1>Exonerate</h1>
+        <i>(verb)</i>
+        <p>To absolve or clear someone from blame or guilt.</p>
+
+        <h1>Exuberance</h1>
+        <i>(noun)</i>
+        <p>Great energy and enthusiasm.</p>
+
+        <h1>Entourage</h1>
+        <i>(noun)</i>
+        <p>A group of people who accompany and support an important person.</p>
+
+        <h1>Exile</h1>
+        <i>(noun)</i>
+        <p>The state of being barred from one’s own country, typically for political reasons.</p>
+
+        <h1>Equivocate</h1>
+        <i>(verb)</i>
+        <p>To speak ambiguously or deliberately mislead.</p>
+
+        <h1>Enrich</h1>
+        <i>(verb)</i>
+        <p>To improve or enhance the quality of something.</p>
+
+        <h1>Exhort</h1>
+        <i>(verb)</i>
+        <p>To strongly encourage or urge someone to take action.</p>
+
+        <h1>Epitome</h1>
+        <i>(noun)</i>
+        <p>A perfect example of a particular quality or type.</p>
+
+        <h1>Enthrall</h1>
+        <i>(verb)</i>
+        <p>To captivate or hold the attention of someone completely.</p>
+
+        <h1>Exemplary</h1>
+        <i>(adjective)</i>
+        <p>Serving as a desirable model; representing the best of its kind.</p>
+
+        <h1>Evasive</h1>
+        <i>(adjective)</i>
+        <p>Avoiding direct answers or actions, often to escape responsibility.</p>
+
+        <h1>Endorse</h1>
+        <i>(verb)</i>
+        <p>To publicly support or approve of something or someone.</p>
+
+        <h1>Enrapture</h1>
+        <i>(verb)</i>
+        <p>To fill someone with intense pleasure or delight.</p>
+
+        <h1>Exultant</h1>
+        <i>(adjective)</i>
+        <p>Feeling or showing great happiness and joy.</p>
+
+        <h1>Exquisite</h1>
+        <i>(adjective)</i>
+        <p>Extremely beautiful and delicate in detail.</p>
+
+        <h1>Extol</h1>
+        <i>(verb)</i>
+        <p>To praise enthusiastically and publicly.</p>
+
+        <h1>Effervescent</h1>
+        <i>(adjective)</i>
+        <p>Bubbling or fizzing, often referring to a liquid or personality.</p>
+
+        <h1>Envelop</h1>
+        <i>(verb)</i>
+        <p>To completely surround or cover something.</p>
+
+        <h1>Exceed</h1>
+        <i>(verb)</i>
+        <p>To go beyond a set limit or standard.</p>
+
+        <h1>Eccentric</h1>
+        <i>(adjective)</i>
+        <p>Unconventional or slightly strange in behavior or appearance.</p>
+
+        <h1>Exemplify</h1>
+        <i>(verb)</i>
+        <p>To illustrate or clarify by giving an example.</p>
+
+        <h1>Entangle</h1>
+        <i>(verb)</i>
+        <p>To involve someone in a complicated situation.</p>
+
+        <h1>Embellish</h1>
+        <i>(verb)</i>
+        <p>To decorate or add details to something, often to make it more attractive.</p>
+
+        <h1>Elude</h1>
+        <i>(verb)</i>
+        <p>To escape from or avoid something, usually in a skillful way.</p>
+        <br>
+        <hr> <br>
+        <h1>Facilitate</h1>
+        <i>(verb)</i>
+        <p>To make an action or process easier or more efficient.</p>
+
+        <h1>Flabbergasted</h1>
+        <i>(adjective)</i>
+        <p>Extremely surprised or shocked.</p>
+
+        <h1>Fervent</h1>
+        <i>(adjective)</i>
+        <p>Having or displaying a passionate intensity.</p>
+
+        <h1>Frivolous</h1>
+        <i>(adjective)</i>
+        <p>Not having any serious purpose or value; carefree or shallow.</p>
+
+        <h1>Finesse</h1>
+        <i>(noun)</i>
+        <p>Skillful handling or diplomacy in a situation or task.</p>
+
+        <h1>Fortuitous</h1>
+        <i>(adjective)</i>
+        <p>Happening by chance, often in a lucky or fortunate way.</p>
+
+        <h1>Fluctuate</h1>
+        <i>(verb)</i>
+        <p>To change or vary frequently in an irregular way.</p>
+
+        <h1>Fathom</h1>
+        <i>(verb)</i>
+        <p>To understand or comprehend something deeply.</p>
+
+        <h1>Frugal</h1>
+        <i>(adjective)</i>
+        <p>Economical, avoiding unnecessary expenses or waste.</p>
+
+        <h1>Fervor</h1>
+        <i>(noun)</i>
+        <p>Intense passion or enthusiasm for something.</p>
+
+        <h1>Frightful</h1>
+        <i>(adjective)</i>
+        <p>Causing fear or alarm.</p>
+
+        <h1>Foster</h1>
+        <i>(verb)</i>
+        <p>To encourage the growth or development of something.</p>
+
+        <h1>Futile</h1>
+        <i>(adjective)</i>
+        <p>Incapable of producing any useful result; pointless or ineffective.</p>
+
+        <h1>Flimsy</h1>
+        <i>(adjective)</i>
+        <p>Weak, fragile, or insubstantial in structure.</p>
+
+        <h1>Formidable</h1>
+        <i>(adjective)</i>
+        <p>Impressive or intimidating due to size, strength, or difficulty.</p>
+
+        <h1>Feign</h1>
+        <i>(verb)</i>
+        <p>To pretend or fake something.</p>
+
+        <h1>Fiasco</h1>
+        <i>(noun)</i>
+        <p>A complete failure, especially one that is humiliating.</p>
+
+        <h1>Fractious</h1>
+        <i>(adjective)</i>
+        <p>Unruly or irritable; likely to cause trouble.</p>
+
+        <h1>Facile</h1>
+        <i>(adjective)</i>
+        <p>Easy to do or understand; requiring little effort.</p>
+
+        <h1>Foment</h1>
+        <i>(verb)</i>
+        <p>To instigate or stir up something, often something negative or troublesome.</p>
+
+        <h1>Feasible</h1>
+        <i>(adjective)</i>
+        <p>Possible to do or achieve; practical and reasonable.</p>
+
+        <h1>Flatter</h1>
+        <i>(verb)</i>
+        <p>To praise someone excessively, often insincerely, to gain favor.</p>
+
+        <h1>Feeble</h1>
+        <i>(adjective)</i>
+        <p>Weak in strength or health; lacking physical power.</p>
+
+        <h1>Furious</h1>
+        <i>(adjective)</i>
+        <p>Extremely angry or enraged.</p>
+
+        <h1>Fallacious</h1>
+        <i>(adjective)</i>
+        <p>Based on a false or misleading idea or reasoning.</p>
+
+        <h1>Foster</h1>
+        <i>(verb)</i>
+        <p>To promote or encourage the development of something.</p>
+
+        <h1>Frantic</h1>
+        <i>(adjective)</i>
+        <p>Wild with panic or excitement.</p>
+
+        <h1>Franchise</h1>
+        <i>(noun)</i>
+        <p>The right or license to operate a business or service under an established brand.</p>
+
+        <h1>Fledge</h1>
+        <i>(verb)</i>
+        <p>To grow feathers or develop the ability to fly, especially for birds.</p>
+
+        <h1>Flourish</h1>
+        <i>(verb)</i>
+        <p>To grow or develop vigorously; to thrive.</p>
+
+        <h1>Fatuous</h1>
+        <i>(adjective)</i>
+        <p>Stupid, foolish, or self-satisfied in an annoying way.</p>
+
+        <h1>Fidget</h1>
+        <i>(verb)</i>
+        <p>To make small, restless movements, usually due to nervousness or impatience.</p>
+        <br>
+    </div>
+
+</body>
+
+</html>

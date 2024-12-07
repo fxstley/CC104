@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.jpg">
+    <title>WORD CRAFTS | DICTIONARY</title>
+</head>
+
+<body>
+    <nav class="web">
+        <div class="codecraftsicon">
+            <img class="logo" src="icon.jpg " alt="Logo">
+        </div>
+        <div class="webname">
+            <p> WORD CRAFTS .</p>
+        </div>
+        <div class="menu" id="Menu">
+            <ul>
+                <li><a href="home.html" class="link">HOME</a></li>
+                <li><a href="dictionary.html" class="link active">DICTIONARY</a></li>
+            </ul>
+        </div>
+        <div class="close-btn">
+            <button id="close-btn" onclick="window.location.href='index.html'">X</button>
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="login-btn">Login</button>
+            <button class="btn" id="signup-btn">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <h2> Looking for </h2>
+        <ul>
+            <li><a href="ac.html">A to C</a></li>
+            <li><a href="df.html"> D to F </a></li>
+            <li><a href="gi.html">G to I</a></li>
+            <li><a href="jl.html">J to L</a></li>
+            <li><a href="mo.html">M to O</a></li>
+            <li><a href="pr.html">P to R</a></li>
+            <li><a href="su.html">S to U</a></li>
+            <li><a href="vx.html">V to X</a></li>
+            <li><a href="yz.html">Y & Z</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-button">🔍</button>
+            <button class="reset-button">✖</button>
+        </div>
+        <ul class="results-list"></ul>
+        <script>
+            const wordList = ["Jubilant", "Jovial", "Jargon", "Jaded", "Judicious",
+                "Jostle",
+                "Jeopardize", "Jumble", "Joviality", "Jaundice", "Judgment", "Joint",
+                "Juxtapose", "Jettison", "Jocular", "Jubilance", "Juggle", "Jobber",
+                "Jaded", "Jargonize", "Jittery", "Jackal", "Jumble", "Jetlag",
+                "Jolly", "Jolly", "Jibe", "Jettison", "Jive", "Jigsaw",
+                "Jungle", "Junk", "Kingpin", "Knavery", "Knack", "Keen",
+                "Killer", "Knotty", "Knee-jerk", "Knave", "Kidnap", "Kismet",
+                "Knockout", "Kudos", "Kilter", "Knoll", "Kinship", "Knuckle",
+                "Keenly", "Karmic", "Kickback", "Kangaroo", "Knowledge", "Keystone",
+                "Kooky", "Keep", "Kudos", "Kite", "Keyhole", "Kettle",
+                "Knot", "Labyrinth", "Legacy", "Levitate", "Labored", "Lofty",
+                "Languid", "Lucid", "Leverage", "Leash", "Libel", "Liberty",
+                "Lament", "Laudable", "Lacerate", "Luminous", "Lucidly", "Litigate",
+                "Leeway", "Leper", "Languish", "Literate", "Lout", "Licentious",
+                "Levity", "Livid", "Labia", "Lurk", "Lividly"];
+
+            const searchInput = document.querySelector('.search-input');
+            const resultsList = document.querySelector('.results-list');
+            const resetButton = document.querySelector('.reset-button');
+
+            function searchAndSortWords() {
+                const query = searchInput.value.trim().toLowerCase();
+
+                if (query === '') {
+                    resultsList.innerHTML = '';
+                    return;
+                }
+
+                const filteredWords = wordList
+                    .filter(word => word.toLowerCase().startsWith(query))
+                    .sort((a, b) => a.localeCompare(b));
+
+                resultsList.innerHTML = '';
+
+                if (filteredWords.length > 0) {
+                    filteredWords.forEach(word => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = word;
+                        resultsList.appendChild(listItem);
+                    });
+                } else {
+                    resultsList.innerHTML = '<li>No results found</li>';
+                }
+            }
+
+            resetButton.addEventListener('click', () => {
+                searchInput.value = '';
+                resultsList.innerHTML = '';
+            });
+
+            searchInput.addEventListener('input', searchAndSortWords);
+        </script>
+        <h1>Jubilant</h1>
+        <i>(adjective)</i>
+        <p>Showing great joy, satisfaction, or triumph.</p>
+
+        <h1>Jovial</h1>
+        <i>(adjective)</i>
+        <p>Cheerful and good-natured; full of high spirits.</p>
+
+        <h1>Jargon</h1>
+        <i>(noun)</i>
+        <p>Specialized or technical language used by a particular group or profession.</p>
+
+        <h1>Jaded</h1>
+        <i>(adjective)</i>
+        <p>Worn out or fatigued, often due to overindulgence or excessive work.</p>
+
+        <h1>Judicious</h1>
+        <i>(adjective)</i>
+        <p>Having or showing good judgment or sense.</p>
+
+        <h1>Jostle</h1>
+        <i>(verb)</i>
+        <p>To push, elbow, or bump against someone or something, often in a crowded area.</p>
+
+        <h1>Jeopardize</h1>
+        <i>(verb)</i>
+        <p>To put something at risk or in danger of harm or failure.</p>
+
+        <h1>Jumble</h1>
+        <i>(verb)</i>
+        <p>To mix things together in a confused or disordered manner.</p>
+
+        <h1>Joviality</h1>
+        <i>(noun)</i>
+        <p>The quality of being cheerful, good-humored, or full of joy.</p>
+
+        <h1>Jaundice</h1>
+        <i>(noun)</i>
+        <p>A medical condition causing yellowing of the skin and eyes, often due to liver disease.</p>
+
+        <h1>Judgment</h1>
+        <i>(noun)</i>
+        <p>The ability to make decisions or form opinions objectively, often based on reason.</p>
+
+        <h1>Joint</h1>
+        <i>(noun)</i>
+        <p>The point where two or more things are connected, especially bones or body parts.</p>
+
+        <h1>Juxtapose</h1>
+        <i>(verb)</i>
+        <p>To place two or more things side by side, often for comparison or contrast.</p>
+
+        <h1>Jettison</h1>
+        <i>(verb)</i>
+        <p>To throw or discard something, often because it is no longer useful or needed.</p>
+
+        <h1>Jocular</h1>
+        <i>(adjective)</i>
+        <p>Characterized by joking or humor; playful.</p>
+
+        <h1>Jubilance</h1>
+        <i>(noun)</i>
+        <p>Great happiness, celebration, or joy.</p>
+
+        <h1>Juggle</h1>
+        <i>(verb)</i>
+        <p>To throw and catch several objects, such as balls, in the air in a continuous motion.</p>
+
+        <h1>Jobber</h1>
+        <i>(noun)</i>
+        <p>A person or company that buys and sells goods, especially in bulk, for profit.</p>
+
+        <h1>Jaded</h1>
+        <i>(adjective)</i>
+        <p>Exhausted or worn out, often from overindulgence or repetitive experiences.</p>
+
+        <h1>Jargonize</h1>
+        <i>(verb)</i>
+        <p>To use technical or specialized language that may be confusing to others.</p>
+
+        <h1>Jittery</h1>
+        <i>(adjective)</i>
+        <p>Feeling nervous, anxious, or shaky, often due to excitement or stress.</p>
+
+        <h1>Jackal</h1>
+        <i>(noun)</i>
+        <p>A wild carnivorous animal closely related to the dog, often known for scavenging.</p>
+
+        <h1>Jumble</h1>
+        <i>(noun)</i>
+        <p>A confused or disordered mixture of things.</p>
+
+        <h1>Jetlag</h1>
+        <i>(noun)</i>
+        <p>The fatigue and discomfort caused by traveling across time zones quickly.</p>
+
+        <h1>Jolly</h1>
+        <i>(adjective)</i>
+        <p>Happy, cheerful, and full of high spirits.</p>
+
+        <h1>Jolly</h1>
+        <i>(adjective)</i>
+        <p>Happy and cheerful.</p>
+
+        <h1>Jibe</h1>
+        <i>(verb)</i>
+        <p>To be in harmony or agreement, or to mock or ridicule someone.</p>
+
+        <h1>Jettison</h1>
+        <i>(verb)</i>
+        <p>To throw away or discard something, especially something unnecessary.</p>
+
+        <h1>Jive</h1>
+        <i>(verb)</i>
+        <p>To move or dance rhythmically, especially to jazz or swing music.</p>
+
+        <h1>Jigsaw</h1>
+        <i>(noun)</i>
+        <p>A puzzle consisting of many small pieces that fit together to form a picture.</p>
+
+        <h1>Jungle</h1>
+        <i>(noun)</i>
+        <p>A dense, tropical forest, often in a hot, humid climate.</p>
+
+        <h1>Junk</h1>
+        <i>(noun)</i>
+        <p>Old or discarded items or things of little value.</p>
+        <br>
+        <hr> <br>
+        <h1>Kingpin</h1>
+        <i>(noun)</i>
+        <p>The most important or central person in a group or activity.</p>
+
+        <h1>Knavery</h1>
+        <i>(noun)</i>
+        <p>Dishonest or unscrupulous behavior; trickery or deceit.</p>
+
+        <h1>Knack</h1>
+        <i>(noun)</i>
+        <p>A special talent or skill, particularly for doing something well or with ease.</p>
+
+        <h1>Keen</h1>
+        <i>(adjective)</i>
+        <p>Sharp or highly perceptive, especially in senses or intellect.</p>
+
+        <h1>Killer</h1>
+        <i>(noun)</i>
+        <p>A person or thing that kills or destroys something.</p>
+
+        <h1>Knotty</h1>
+        <i>(adjective)</i>
+        <p>Full of complicated problems or intricacies; difficult to solve or understand.</p>
+
+        <h1>Knee-jerk</h1>
+        <i>(adjective)</i>
+        <p>Instantly or reflexively reacting, without thought or consideration.</p>
+
+        <h1>Knave</h1>
+        <i>(noun)</i>
+        <p>A dishonest or untrustworthy person; a scoundrel.</p>
+
+        <h1>Kidnap</h1>
+        <i>(verb)</i>
+        <p>To take someone away by force or threat, often for ransom.</p>
+
+        <h1>Kismet</h1>
+        <i>(noun)</i>
+        <p>Fate or destiny, often believed to be controlled by a higher power.</p>
+
+        <h1>Knockout</h1>
+        <i>(noun)</i>
+        <p>A decisive or powerful blow, often in a competition or fight.</p>
+
+        <h1>Kudos</h1>
+        <i>(noun)</i>
+        <p>Public acclaim or praise for an achievement or accomplishment.</p>
+
+        <h1>Kilter</h1>
+        <i>(noun)</i>
+        <p>A state of proper balance or condition.</p>
+
+        <h1>Knoll</h1>
+        <i>(noun)</i>
+        <p>A small hill or mound, especially one with a rounded top.</p>
+
+        <h1>Kinship</h1>
+        <i>(noun)</i>
+        <p>The relationship or bond between people who share a common ancestor.</p>
+
+        <h1>Knuckle</h1>
+        <i>(noun)</i>
+        <p>The joint of a finger, or the part of the hand where the finger bends.</p>
+
+        <h1>Keenly</h1>
+        <i>(adverb)</i>
+        <p>In a sharp, intense, or enthusiastic manner.</p>
+
+        <h1>Karmic</h1>
+        <i>(adjective)</i>
+        <p>Relating to the concept of karma, where actions in life influence future events.</p>
+
+        <h1>Kickback</h1>
+        <i>(noun)</i>
+        <p>A payment made as part of a larger illegal or unethical transaction.</p>
+
+        <h1>Kangaroo</h1>
+        <i>(noun)</i>
+        <p>A large marsupial native to Australia, known for hopping and having strong hind legs.</p>
+
+        <h1>Knowledge</h1>
+        <i>(noun)</i>
+        <p>Information, facts, or skills acquired through experience or education.</p>
+
+        <h1>Keystone</h1>
+        <i>(noun)</i>
+        <p>The central, topmost stone in an arch that holds the rest of the structure in place.</p>
+
+        <h1>Kooky</h1>
+        <i>(adjective)</i>
+        <p>Odd, eccentric, or quirky in a way that is amusing or endearing.</p>
+
+        <h1>Keep</h1>
+        <i>(verb)</i>
+        <p>To retain possession of something or continue to hold it in one's care.</p>
+
+        <h1>Kudos</h1>
+        <i>(noun)</i>
+        <p>Praise or honor for an achievement or accomplishment.</p>
+
+        <h1>Kite</h1>
+        <i>(noun)</i>
+        <p>A light, often colorful object flown in the air on a string.</p>
+
+        <h1>Keyhole</h1>
+        <i>(noun)</i>
+        <p>The hole in a door where a key is inserted to unlock it.</p>
+
+        <h1>Kettle</h1>
+        <i>(noun)</i>
+        <p>A container for boiling water, often with a spout for pouring.</p>
+
+        <h1>Knot</h1>
+        <i>(noun)</i>
+        <p>A fastening made by tying a loop in a rope or string.</p>
+        <br>
+        <hr> <br>
+        <h1>Labyrinth</h1>
+        <i>(noun)</i>
+        <p>A complex network of paths or passages, often confusing and intricate.</p>
+
+        <h1>Legacy</h1>
+        <i>(noun)</i>
+        <p>Something handed down from the past, such as property, tradition, or influence.</p>
+
+        <h1>Levitate</h1>
+        <i>(verb)</i>
+        <p>To rise or cause to rise into the air, typically by supernatural or scientific means.</p>
+
+        <h1>Labored</h1>
+        <i>(adjective)</i>
+        <p>Performed with great effort or difficulty, often showing strain or exhaustion.</p>
+
+        <h1>Lofty</h1>
+        <i>(adjective)</i>
+        <p>Of great height; elevated in character or ideals.</p>
+
+        <h1>Languid</h1>
+        <i>(adjective)</i>
+        <p>Weak or faint from illness or fatigue; lacking in energy.</p>
+
+        <h1>Lucid</h1>
+        <i>(adjective)</i>
+        <p>Clear and easy to understand; rational and coherent.</p>
+
+        <h1>Leverage</h1>
+        <i>(noun)</i>
+        <p>The power or ability to influence or control a situation or outcome.</p>
+
+        <h1>Leash</h1>
+        <i>(noun)</i>
+        <p>A strap or cord used to control an animal, especially a dog.</p>
+
+        <h1>Libel</h1>
+        <i>(noun)</i>
+        <p>A false statement that damages someone's reputation, often written.</p>
+
+        <h1>Liberty</h1>
+        <i>(noun)</i>
+        <p>The state of being free from restrictions or control; freedom.</p>
+
+        <h1>Lament</h1>
+        <i>(verb)</i>
+        <p>To express sorrow, grief, or regret over something.</p>
+
+        <h1>Laudable</h1>
+        <i>(adjective)</i>
+        <p>Deserving praise or admiration.</p>
+
+        <h1>Lacerate</h1>
+        <i>(verb)</i>
+        <p>To tear or cut something, especially the skin, deeply and often painfully.</p>
+
+        <h1>Luminous</h1>
+        <i>(adjective)</i>
+        <p>Emitting or reflecting light; glowing or shining.</p>
+
+        <h1>Lucidly</h1>
+        <i>(adverb)</i>
+        <p>In a clear and easy-to-understand manner.</p>
+
+        <h1>Litigate</h1>
+        <i>(verb)</i>
+        <p>To engage in a legal dispute or lawsuit.</p>
+
+        <h1>Leeway</h1>
+        <i>(noun)</i>
+        <p>The amount of freedom or flexibility to make decisions or take action.</p>
+
+        <h1>Leper</h1>
+        <i>(noun)</i>
+        <p>A person suffering from leprosy, or one who is shunned or outcast.</p>
+
+        <h1>Languish</h1>
+        <i>(verb)</i>
+        <p>To suffer or become weak, especially due to lack of activity or attention.</p>
+
+        <h1>Literate</h1>
+        <i>(adjective)</i>
+        <p>Having the ability to read and write; knowledgeable in a particular subject.</p>
+
+        <h1>Lout</h1>
+        <i>(noun)</i>
+        <p>A clumsy, rude, or uncouth person.</p>
+
+        <h1>Licentious</h1>
+        <i>(adjective)</i>
+        <p>Lacking moral restraint, often in sexual matters.</p>
+
+        <h1>Levity</h1>
+        <i>(noun)</i>
+        <p>Lack of seriousness or earnestness, often at an inappropriate time.</p>
+
+        <h1>Livid</h1>
+        <i>(adjective)</i>
+        <p>Extremely angry or enraged.</p>
+
+        <h1>Labia</h1>
+        <i>(noun)</i>
+        <p>The outer and inner folds of skin surrounding the human vulva.</p>
+
+        <h1>Lurk</h1>
+        <i>(verb)</i>
+        <p>To remain hidden, often for sinister purposes.</p>
+
+        <h1>Lividly</h1>
+        <i>(adverb)</i>
+        <p>In an angry or furious manner.</p>
+    </div>
+
+</body>
+
+</html>

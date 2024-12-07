@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.jpg">
+    <title>WORD CRAFTS | DICTIONARY</title>
+</head>
+
+<body>
+    <nav class="web">
+        <div class="codecraftsicon">
+            <img class="logo" src="icon.jpg " alt="Logo">
+        </div>
+        <div class="webname">
+            <p> WORD CRAFTS .</p>
+        </div>
+        <div class="menu" id="Menu">
+            <ul>
+                <li><a href="home.html" class="link">HOME</a></li>
+                <li><a href="dictionary.html" class="link active">DICTIONARY</a></li>
+            </ul>
+        </div>
+        <div class="close-btn">
+            <button id="close-btn" onclick="window.location.href='index.html'">X</button>
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="login-btn">Login</button>
+            <button class="btn" id="signup-btn">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <h2> Looking for </h2>
+        <ul>
+            <li><a href="ac.html">A to C</a></li>
+            <li><a href="df.html"> D to F </a></li>
+            <li><a href="htmlformatting.html">G to I</a></li>
+            <li><a href="jl.html">J to L</a></li>
+            <li><a href="mo.html">M to O</a></li>
+            <li><a href="pr.html">P to R</a></li>
+            <li><a href="su.html">S to U</a></li>
+            <li><a href="vx.html">V to X</a></li>
+            <li><a href="yz.html">Y & Z</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-button">🔍</button>
+            <button class="reset-button">✖</button>
+        </div>
+        <ul class="results-list"></ul>
+        <script>
+            const wordList = ["Magnificent", "Malicious", "Meticulous", "Melancholy", "Momentum",
+                "Manoeuvre",
+                "Mercenary", "Merciful", "Mutiny", "Monotony", "Malady", "Masterful",
+                "Morbid", "Monumental", "Mentor", "Mobility", "Magnanimous", "Mirage",
+                "Momentous", "Masquerade", "Malfunction", "Myriad", "Melancholic", "Modicum",
+                "Modernize", "Manifest", "Majestic", "Maniacal", "Magnetism", "Monetary",
+                "Morale", "Mobster", "Mutate", "Naive", "Navigate", "Necessitate",
+                "Nomadic", "Notorious", "Neologism", "Naiveté", "Nuance", "Negligible",
+                "Nightmare", "Nominate", "Neutral", "Neglect", "Nourish", "Notion",
+                "Network", "Necrosis", "Nominal", "Navigate", "Nonchalant", "Noteworthy",
+                "Needy", "Negotiate", "Napkin", "Nomad", "Near", "Neptune",
+                "Necessary", "Nascent", "Nonprofit", "Neglectful", "Obscure", "Obstinate",
+                "Oblivion", "Optimize", "Obfuscate", "Omnipotent", "Ominous", "Officious",
+                "Opaque", "Overflow", "Ostracize", "Offense", "Oblivious", "Ovation",
+                "Opulence", "Outrage", "Overwhelm", "Omnipresent", "Overtake", "Oxidize",
+                "Overjoyed", "Ongoing", "Observe", "Oblige", "Ominously", "Overcome",
+                "Oust", "Obligatory", "Ominousness", "Outlook"];
+
+            const searchInput = document.querySelector('.search-input');
+            const resultsList = document.querySelector('.results-list');
+            const resetButton = document.querySelector('.reset-button');
+
+            function searchAndSortWords() {
+                const query = searchInput.value.trim().toLowerCase();
+
+                if (query === '') {
+                    resultsList.innerHTML = '';
+                    return;
+                }
+
+                const filteredWords = wordList
+                    .filter(word => word.toLowerCase().startsWith(query))
+                    .sort((a, b) => a.localeCompare(b));
+
+                resultsList.innerHTML = '';
+
+                if (filteredWords.length > 0) {
+                    filteredWords.forEach(word => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = word;
+                        resultsList.appendChild(listItem);
+                    });
+                } else {
+                    resultsList.innerHTML = '<li>No results found</li>';
+                }
+            }
+
+            resetButton.addEventListener('click', () => {
+                searchInput.value = '';
+                resultsList.innerHTML = '';
+            });
+
+            searchInput.addEventListener('input', searchAndSortWords);
+        </script>
+        <h1>Magnificent</h1>
+        <i>(adjective)</i>
+        <p>Very impressive or beautiful; outstanding in appearance or quality.</p>
+
+        <h1>Malicious</h1>
+        <i>(adjective)</i>
+        <p>Intending or intended to harm or hurt someone; spiteful.</p>
+
+        <h1>Meticulous</h1>
+        <i>(adjective)</i>
+        <p>Showing great attention to detail; very careful and precise.</p>
+
+        <h1>Melancholy</h1>
+        <i>(noun)</i>
+        <p>A deep, persistent sadness or sorrow.</p>
+
+        <h1>Momentum</h1>
+        <i>(noun)</i>
+        <p>The force or speed of movement, especially of a moving object.</p>
+
+        <h1>Manoeuvre</h1>
+        <i>(verb)</i>
+        <p>To move or manipulate something skillfully, especially in a controlled manner.</p>
+
+        <h1>Mercenary</h1>
+        <i>(noun)</i>
+        <p>A soldier hired to fight for another country or group, often without loyalty.</p>
+
+        <h1>Merciful</h1>
+        <i>(adjective)</i>
+        <p>Showing compassion or forgiveness, especially toward someone less fortunate.</p>
+
+        <h1>Mutiny</h1>
+        <i>(noun)</i>
+        <p>A rebellion or revolt against authority, especially in a military context.</p>
+
+        <h1>Monotony</h1>
+        <i>(noun)</i>
+        <p>The state of being dull or repetitively unchanging; lack of variety.</p>
+
+        <h1>Malady</h1>
+        <i>(noun)</i>
+        <p>A disease or ailment; a serious illness or disorder.</p>
+
+        <h1>Masterful</h1>
+        <i>(adjective)</i>
+        <p>Displaying great skill or expertise.</p>
+
+        <h1>Morbid</h1>
+        <i>(adjective)</i>
+        <p>Relating to or caused by disease or illness; unhealthily focused on death or decay.</p>
+
+        <h1>Monumental</h1>
+        <i>(adjective)</i>
+        <p>Very large, impressive, or important in scale or significance.</p>
+
+        <h1>Mentor</h1>
+        <i>(noun)</i>
+        <p>A wise and trusted advisor or guide.</p>
+
+        <h1>Mobility</h1>
+        <i>(noun)</i>
+        <p>The ability to move or be moved easily from one place to another.</p>
+
+        <h1>Magnanimous</h1>
+        <i>(adjective)</i>
+        <p>Generous and forgiving, especially towards a rival or less powerful person.</p>
+
+        <h1>Mirage</h1>
+        <i>(noun)</i>
+        <p>An optical illusion, often seen in deserts or on roads, caused by atmospheric conditions.</p>
+
+        <h1>Momentous</h1>
+        <i>(adjective)</i>
+        <p>Of great importance or significance, especially in relation to an event.</p>
+
+        <h1>Masquerade</h1>
+        <i>(verb)</i>
+        <p>To disguise or conceal one's true identity, often for deceptive purposes.</p>
+
+        <h1>Malfunction</h1>
+        <i>(noun)</i>
+        <p>A failure to function or work as intended; a breakdown.</p>
+
+        <h1>Myriad</h1>
+        <i>(noun)</i>
+        <p>A countless or extremely large number of things or people.</p>
+
+        <h1>Melancholic</h1>
+        <i>(adjective)</i>
+        <p>Feeling or showing deep sadness or sorrow.</p>
+
+        <h1>Modicum</h1>
+        <i>(noun)</i>
+        <p>A small or modest amount of something, especially something desirable.</p>
+
+        <h1>Modernize</h1>
+        <i>(verb)</i>
+        <p>To make something more up-to-date or contemporary in style or function.</p>
+
+        <h1>Manifest</h1>
+        <i>(verb)</i>
+        <p>To show or demonstrate clearly; to make something evident or obvious.</p>
+
+        <h1>Majestic</h1>
+        <i>(adjective)</i>
+        <p>Impressive in size, beauty, or dignity; grand and regal.</p>
+
+        <h1>Maniacal</h1>
+        <i>(adjective)</i>
+        <p>Displaying excessive or irrational enthusiasm or obsession.</p>
+
+        <h1>Magnetism</h1>
+        <i>(noun)</i>
+        <p>The physical phenomenon associated with the force exerted by magnets.</p>
+
+        <h1>Monetary</h1>
+        <i>(adjective)</i>
+        <p>Relating to money or currency.</p>
+
+        <h1>Morale</h1>
+        <i>(noun)</i>
+        <p>The mental and emotional state of a group, especially as it affects their motivation and teamwork.</p>
+
+        <h1>Mobster</h1>
+        <i>(noun)</i>
+        <p>A member of an organized crime group or gang.</p>
+
+        <h1>Mutate</h1>
+        <i>(verb)</i>
+        <p>To undergo a change or transformation, often in a genetic or biological sense.</p>
+        <br>
+        <hr> <br>
+        <h1>Naive</h1>
+        <i>(adjective)</i>
+        <p>Showing a lack of experience, wisdom, or judgment; innocent or gullible.</p>
+
+        <h1>Navigate</h1>
+        <i>(verb)</i>
+        <p>To plan and direct the course of a journey or movement, often by using maps or instruments.</p>
+
+        <h1>Necessitate</h1>
+        <i>(verb)</i>
+        <p>To make something necessary or unavoidable.</p>
+
+        <h1>Nomadic</h1>
+        <i>(adjective)</i>
+        <p>Living a lifestyle of moving from place to place, often without a permanent home.</p>
+
+        <h1>Notorious</h1>
+        <i>(adjective)</i>
+        <p>Famous or well-known, typically for something bad or undesirable.</p>
+
+        <h1>Neologism</h1>
+        <i>(noun)</i>
+        <p>A new word, phrase, or expression that has recently been created or adopted.</p>
+
+        <h1>Naiveté</h1>
+        <i>(noun)</i>
+        <p>The state of being inexperienced, innocent, or unaware of the complexities of life.</p>
+
+        <h1>Nuance</h1>
+        <i>(noun)</i>
+        <p>A subtle difference or variation in meaning, expression, or tone.</p>
+
+        <h1>Negligible</h1>
+        <i>(adjective)</i>
+        <p>So small or unimportant that it can be disregarded.</p>
+
+        <h1>Nightmare</h1>
+        <i>(noun)</i>
+        <p>A frightening or unpleasant dream or situation.</p>
+
+        <h1>Nominate</h1>
+        <i>(verb)</i>
+        <p>To formally suggest or propose someone for a position or honor.</p>
+
+        <h1>Neutral</h1>
+        <i>(adjective)</i>
+        <p>Not supporting or favoring either side in a dispute or conflict.</p>
+
+        <h1>Neglect</h1>
+        <i>(verb)</i>
+        <p>To fail to care for or attend to something properly.</p>
+
+        <h1>Nourish</h1>
+        <i>(verb)</i>
+        <p>To provide the necessary food, nutrients, or care for someone or something to grow and thrive.</p>
+
+        <h1>Notion</h1>
+        <i>(noun)</i>
+        <p>An idea, belief, or opinion about something.</p>
+
+        <h1>Network</h1>
+        <i>(noun)</i>
+        <p>A system of interconnected people or things, especially for communication or resource sharing.</p>
+
+        <h1>Necrosis</h1>
+        <i>(noun)</i>
+        <p>The death of cells or tissue in the body, often due to injury or disease.</p>
+
+        <h1>Nominal</h1>
+        <i>(adjective)</i>
+        <p>Existing in name only, or a small or insignificant amount.</p>
+
+        <h1>Navigate</h1>
+        <i>(verb)</i>
+        <p>To direct or guide through a process, often involving complex or uncertain paths.</p>
+
+        <h1>Nonchalant</h1>
+        <i>(adjective)</i>
+        <p>Having a relaxed, calm, and unconcerned attitude.</p>
+
+        <h1>Noteworthy</h1>
+        <i>(adjective)</i>
+        <p>Deserving attention or recognition due to importance or merit.</p>
+
+        <h1>Needy</h1>
+        <i>(adjective)</i>
+        <p>In a state of poverty or lacking in basic necessities.</p>
+
+        <h1>Negotiate</h1>
+        <i>(verb)</i>
+        <p>To discuss and reach an agreement on something, especially in a formal or business context.</p>
+
+        <h1>Napkin</h1>
+        <i>(noun)</i>
+        <p>A piece of cloth or paper used for wiping the mouth or hands while eating.</p>
+
+        <h1>Nomad</h1>
+        <i>(noun)</i>
+        <p>A person who moves from place to place, often in search of food, work, or a better living situation.</p>
+
+        <h1>Near</h1>
+        <i>(adjective)</i>
+        <p>Close in distance, time, or relationship.</p>
+
+        <h1>Neptune</h1>
+        <i>(noun)</i>
+        <p>The eighth planet from the Sun, known for its blue appearance and strong winds.</p>
+
+        <h1>Necessary</h1>
+        <i>(adjective)</i>
+        <p>Required or essential for a particular purpose or outcome.</p>
+
+        <h1>Nascent</h1>
+        <i>(adjective)</i>
+        <p>In the process of being born or created; emerging.</p>
+
+        <h1>Nonprofit</h1>
+        <i>(adjective)</i>
+        <p>Organized to serve a public or charitable purpose, rather than for financial profit.</p>
+
+        <h1>Neglectful</h1>
+        <i>(adjective)</i>
+        <p>Failing to give proper care or attention to something or someone.</p>
+        <br>
+        <hr> <br>
+        <h1>Obscure</h1>
+        <i>(adjective)</i>
+        <p>Not well known or understood; unclear or vague.</p>
+
+        <h1>Obstinate</h1>
+        <i>(adjective)</i>
+        <p>Stubbornly refusing to change one's opinion or attitude.</p>
+
+        <h1>Oblivion</h1>
+        <i>(noun)</i>
+        <p>The state of being completely forgotten or unknown.</p>
+
+        <h1>Optimize</h1>
+        <i>(verb)</i>
+        <p>To make the best or most effective use of something.</p>
+
+        <h1>Obfuscate</h1>
+        <i>(verb)</i>
+        <p>To deliberately make something unclear or difficult to understand.</p>
+
+        <h1>Omnipotent</h1>
+        <i>(adjective)</i>
+        <p>Having unlimited power or authority; all-powerful.</p>
+
+        <h1>Ominous</h1>
+        <i>(adjective)</i>
+        <p>Indicating or suggesting something unpleasant or harmful will happen.</p>
+
+        <h1>Officious</h1>
+        <i>(adjective)</i>
+        <p>Excessively eager to offer unwanted help or advice.</p>
+
+        <h1>Opaque</h1>
+        <i>(adjective)</i>
+        <p>Not able to be seen through; not transparent or clear.</p>
+
+        <h1>Overflow</h1>
+        <i>(verb)</i>
+        <p>To spill over or exceed the capacity of a container or space.</p>
+
+        <h1>Ostracize</h1>
+        <i>(verb)</i>
+        <p>To exclude or banish someone from a group or society.</p>
+
+        <h1>Offense</h1>
+        <i>(noun)</i>
+        <p>An action or behavior that is considered wrong or harmful.</p>
+
+        <h1>Oblivious</h1>
+        <i>(adjective)</i>
+        <p>Unaware or unconscious of what is happening around you.</p>
+
+        <h1>Ovation</h1>
+        <i>(noun)</i>
+        <p>An enthusiastic public display of approval, often in the form of applause.</p>
+
+        <h1>Opulence</h1>
+        <i>(noun)</i>
+        <p>Great wealth or abundance; luxuriousness.</p>
+
+        <h1>Outrage</h1>
+        <i>(noun)</i>
+        <p>An intense feeling of anger or shock, often caused by something unjust or offensive.</p>
+
+        <h1>Overwhelm</h1>
+        <i>(verb)</i>
+        <p>To overpower or crush emotionally, physically, or mentally.</p>
+
+        <h1>Omnipresent</h1>
+        <i>(adjective)</i>
+        <p>Present everywhere at the same time.</p>
+
+        <h1>Overtake</h1>
+        <i>(verb)</i>
+        <p>To pass or surpass something, often in terms of speed or ability.</p>
+
+        <h1>Oxidize</h1>
+        <i>(verb)</i>
+        <p>To chemically combine with oxygen, often resulting in rust or corrosion.</p>
+
+        <h1>Overjoyed</h1>
+        <i>(adjective)</i>
+        <p>Extremely happy or delighted.</p>
+
+        <h1>Ongoing</h1>
+        <i>(adjective)</i>
+        <p>Continuing or still in progress.</p>
+
+        <h1>Observe</h1>
+        <i>(verb)</i>
+        <p>To watch or notice something carefully, often for study or analysis.</p>
+
+        <h1>Oblige</h1>
+        <i>(verb)</i>
+        <p>To do something for someone, often out of a sense of duty or kindness.</p>
+
+        <h1>Ominously</h1>
+        <i>(adverb)</i>
+        <p>In a way that suggests something bad or unpleasant is going to happen.</p>
+
+        <h1>Overcome</h1>
+        <i>(verb)</i>
+        <p>To successfully deal with or conquer a problem or obstacle.</p>
+
+        <h1>Oust</h1>
+        <i>(verb)</i>
+        <p>To remove or force someone out of a position or place.</p>
+
+        <h1>Obligatory</h1>
+        <i>(adjective)</i>
+        <p>Required by law, rule, or tradition; mandatory.</p>
+
+        <h1>Ominousness</h1>
+        <i>(noun)</i>
+        <p>The quality of being threatening or predicting disaster.</p>
+
+        <h1>Outlook</h1>
+        <i>(noun)</i>
+        <p>The view or perspective from a particular place or position.</p>
+        <br>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('bg.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.sigform {
+    width: 600px;
+    height: 450px;
+    background: transparent;
+    color: #ff6780;
+    border-radius: 4%;
+    padding: 20px 60px;
+}
+
+.sigform h1 {
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    text-shadow:  2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.sigform .bttn {
+    width: 50%;
+    height: 45px;
+    background: #ff6780;
+    border: none;
+    border-radius: 40px;
+    outline: none;
+    box-shadow: 0 0 10px rgb(163, 105, 105);
+    cursor: pointer;
+    font-size: 16px;
+    color:#FFD1DC;
+    font-weight: 600;
+    display: block;
+    margin: auto;
+    position: relative;
+    bottom: -15px;
+    right: 150px;
+    text-align: center;
+    line-height: 45px;
+    text-decoration: none;
+    opacity: 0.9;
+}
+.bttn:hover 
+{
+    opacity:1;
+}
+
+.sigform .btn {
+    width: 50%;
+    height: 45px;
+    background: #ff6780;
+    border: none;
+    border-radius: 40px;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 0 0 10px rgb(163, 105, 105);
+    cursor: pointer;
+    font-size: 16px;
+    color:#FFD1DC;
+    font-weight: 600;
+    display: block;
+    margin: auto;
+    position: relative;
+    bottom: 30px;
+    right: -150px;
+    opacity: 0.9;    
+} 
+
+.btn:hover {
+    opacity:1;
+  }
+
+.sigform .fb {
+    height: 50px;
+    width: 190px;
+    transform: scale(0.5);
+    position: relative;
+    bottom: -20px;
+    right: 0;
+    opacity: 0.6;
+} 
+.fb:hover {
+    opacity: 1;
+}
+
+.sigform .ig {
+    height: 30px;
+    width: 190px;
+    transform: scale(0.5);
+    position: relative;
+    bottom: 19px;
+    right: -20%;
+    opacity: 0.6;
+}
+.ig:hover {
+    opacity: 1;
+}
+
+.sigform .twt {
+    height: 50px;
+    width: 190px;
+    transform: scale(0.5);
+    position: relative;
+    bottom: 55px;
+    right: -40%;
+    opacity: 0.6;
+}
+.twt:hover {
+    opacity: 1;
+}
+
+.sigform .yt {
+    height: 50px;
+    width: 190px;
+    transform: scale(0.5);
+    position: relative;
+    bottom: 105px;
+    right: -60%;
+    opacity: 0.6;
+}
+.yt:hover {
+    opacity: 1;
+}
+
+.sigform .cp {
+    font-family: 'Trebuchet MS';
+    font-size: smaller;
+    text-shadow:  2px 2px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+    bottom: 50px;
+    right: -160px;
+}
+

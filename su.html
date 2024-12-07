@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.jpg">
+    <title>WORD CRAFTS | DICTIONARY</title>
+</head>
+
+<body>
+    <nav class="web">
+        <div class="codecraftsicon">
+            <img class="logo" src="icon.jpg " alt="Logo">
+        </div>
+        <div class="webname">
+            <p> WORD CRAFTS .</p>
+        </div>
+        <div class="menu" id="Menu">
+            <ul>
+                <li><a href="home.html" class="link">HOME</a></li>
+                <li><a href="dictionary.html" class="link active">DICTIONARY</a></li>
+            </ul>
+        </div>
+        <div class="close-btn">
+            <button id="close-btn" onclick="window.location.href='index.html'">X</button>
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="login-btn">Login</button>
+            <button class="btn" id="signup-btn">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <h2> Looking for </h2>
+        <ul>
+            <li><a href="ac.html">A to C</a></li>
+            <li><a href="df.html"> D to F </a></li>
+            <li><a href="htmlformatting.html">G to I</a></li>
+            <li><a href="jl.html">J to L</a></li>
+            <li><a href="mo.html">M to O</a></li>
+            <li><a href="pr.html">P to R</a></li>
+            <li><a href="su.html">S to U</a></li>
+            <li><a href="vx.html">V to X</a></li>
+            <li><a href="yz.html">Y & Z</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-button">🔍</button>
+            <button class="reset-button">✖</button>
+        </div>
+        <ul class="results-list"></ul>
+        <script>
+            const wordList = ["Sagacious", "Serene", "Sycophant", "Subterfuge", "Superfluous", "Surreptitious",
+                "Scrutinize", "Succinct", "Solace", "Sinister", "Strenuous", "Speculate",
+                "Scintillating", "Subtle", "Squalid", "Sophisticated", "Sacrosanct", "Stagnant",
+                "Surreal", "Savant", "Subordinate", "Synergy", "Scorn", "Stupendous",
+                "Saturate", "Subside", "Specimen", "Spontaneous", "Sustain", "Segregate",
+                "Scrupulous", "Smug", "Taciturn", "Tranquil", "Tenacious", "Transcend",
+                "Thwart", "Trivial", "Tantamount", "Timid", "Truncate", "Turmoil",
+                "Thorough", "Temperate", "Trite", "Transparent", "Thoroughbred", "Tolerant",
+                "Temporal", "Tactile", "Transitory", "Turbulent", "Tribute", "Tedious",
+                "Tactical", "Treacherous", "Thriving", "Taboo", "Trepidation", "Turbine",
+                "Tangible", "Taxonomy", "Tranquility", "Unanimous", "Ubiquitous", "Utilize",
+                "Undefeated", "Urgent", "Unkempt", "Uplift", "Uprising", "Uncanny",
+                "Undermine", "Ultimate", "Unprecedented", "Underestimate", "Usurp", "Unite",
+                "Uproarious", "Unyielding", "Unquestionable", "Unreliable", "Undoubtedly", "Unjust",
+                "Undivided", "Unveil", "Utmost", "Uproot", "Uplifting", "Unfold",
+                "Urban", "Unstoppable", "Unequal", "Usual"
+            ];
+
+            const searchInput = document.querySelector('.search-input');
+            const resultsList = document.querySelector('.results-list');
+            const resetButton = document.querySelector('.reset-button');
+
+            function searchAndSortWords() {
+                const query = searchInput.value.trim().toLowerCase();
+
+                if (query === '') {
+                    resultsList.innerHTML = '';
+                    return;
+                }
+
+                const filteredWords = wordList
+                    .filter(word => word.toLowerCase().startsWith(query))
+                    .sort((a, b) => a.localeCompare(b));
+
+                resultsList.innerHTML = '';
+
+                if (filteredWords.length > 0) {
+                    filteredWords.forEach(word => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = word;
+                        resultsList.appendChild(listItem);
+                    });
+                } else {
+                    resultsList.innerHTML = '<li>No results found</li>';
+                }
+            }
+
+            resetButton.addEventListener('click', () => {
+                searchInput.value = '';
+                resultsList.innerHTML = '';
+            });
+
+            searchInput.addEventListener('input', searchAndSortWords);
+        </script>
+        <h1>Sagacious</h1>
+        <i>(adjective)</i>
+        <p>Having or showing keen mental discernment and good judgment.</p>
+
+        <h1>Serene</h1>
+        <i>(adjective)</i>
+        <p>Calm, peaceful, and untroubled.</p>
+
+        <h1>Sycophant</h1>
+        <i>(noun)</i>
+        <p>A person who acts obsequiously toward someone important in order to gain advantage.</p>
+
+        <h1>Subterfuge</h1>
+        <i>(noun)</i>
+        <p>Deceit used in order to achieve one's goal.</p>
+
+        <h1>Superfluous</h1>
+        <i>(adjective)</i>
+        <p>Unnecessary, especially through being more than enough.</p>
+
+        <h1>Surreptitious</h1>
+        <i>(adjective)</i>
+        <p>Kept secret, especially because it would not be approved of.</p>
+
+        <h1>Scrutinize</h1>
+        <i>(verb)</i>
+        <p>To examine or inspect closely and thoroughly.</p>
+
+        <h1>Succinct</h1>
+        <i>(adjective)</i>
+        <p>Briefly and clearly expressed.</p>
+
+        <h1>Solace</h1>
+        <i>(noun)</i>
+        <p>Comfort or consolation in a time of distress or sadness.</p>
+
+        <h1>Sinister</h1>
+        <i>(adjective)</i>
+        <p>Giving the impression that something harmful or evil is happening or will happen.</p>
+
+        <h1>Strenuous</h1>
+        <i>(adjective)</i>
+        <p>Requiring or using great exertion or effort.</p>
+
+        <h1>Speculate</h1>
+        <i>(verb)</i>
+        <p>To form a theory or conjecture without sufficient evidence.</p>
+
+        <h1>Scintillating</h1>
+        <i>(adjective)</i>
+        <p>Sparkling or shining brightly.</p>
+
+        <h1>Subtle</h1>
+        <i>(adjective)</i>
+        <p>Delicate or precise in meaning or expression; not obvious.</p>
+
+        <h1>Squalid</h1>
+        <i>(adjective)</i>
+        <p>Extremely dirty and unpleasant, especially due to poverty or neglect.</p>
+
+        <h1>Sophisticated</h1>
+        <i>(adjective)</i>
+        <p>Refined, cultured, or knowledgeable, often in an elegant or complex way.</p>
+
+        <h1>Sacrosanct</h1>
+        <i>(adjective)</i>
+        <p>Regarded as too important or valuable to be interfered with.</p>
+
+        <h1>Stagnant</h1>
+        <i>(adjective)</i>
+        <p>Not flowing or moving; showing no activity or progress.</p>
+
+        <h1>Surreal</h1>
+        <i>(adjective)</i>
+        <p>Having the qualities of surrealism; dreamlike, bizarre, or unreal.</p>
+
+        <h1>Savant</h1>
+        <i>(noun)</i>
+        <p>A learned scholar, especially one with exceptional knowledge in a particular field.</p>
+
+        <h1>Subordinate</h1>
+        <i>(adjective)</i>
+        <p>Lower in rank or position.</p>
+
+        <h1>Synergy</h1>
+        <i>(noun)</i>
+        <p>The interaction of multiple elements that produces a result greater than the sum of their individual effects.
+        </p>
+
+        <h1>Scorn</h1>
+        <i>(noun)</i>
+        <p>A feeling or expression of contempt or derision.</p>
+
+        <h1>Stupendous</h1>
+        <i>(adjective)</i>
+        <p>Extremely impressive, large, or extraordinary.</p>
+
+        <h1>Saturate</h1>
+        <i>(verb)</i>
+        <p>To soak thoroughly or fill to capacity.</p>
+
+        <h1>Subside</h1>
+        <i>(verb)</i>
+        <p>To become less intense, violent, or severe.</p>
+
+        <h1>Specimen</h1>
+        <i>(noun)</i>
+        <p>An individual item or example used for scientific or medical examination.</p>
+
+        <h1>Spontaneous</h1>
+        <i>(adjective)</i>
+        <p>Performed or occurring as a result of a sudden inner impulse or inclination without premeditation.</p>
+
+        <h1>Sustain</h1>
+        <i>(verb)</i>
+        <p>To support or maintain something over time.</p>
+
+        <h1>Segregate</h1>
+        <i>(verb)</i>
+        <p>To separate or set apart from others or from a group.</p>
+
+        <h1>Scrupulous</h1>
+        <i>(adjective)</i>
+        <p>Having strong moral principles; meticulous and careful in doing something correctly.</p>
+
+        <h1>Smug</h1>
+        <i>(adjective)</i>
+        <p>Having or showing an excessive pride in oneself or one's achievements.</p>
+        <br>
+        <hr> <br>
+        <h1>Taciturn</h1>
+        <i>(adjective)</i>
+        <p>Reserved or uncommunicative in speech; saying little.</p>
+
+        <h1>Tranquil</h1>
+        <i>(adjective)</i>
+        <p>Calm and peaceful, free from disturbance.</p>
+
+        <h1>Tenacious</h1>
+        <i>(adjective)</i>
+        <p>Holding fast; persistent or determined in achieving something.</p>
+
+        <h1>Transcend</h1>
+        <i>(verb)</i>
+        <p>To go beyond or rise above a limit or boundary.</p>
+
+        <h1>Thwart</h1>
+        <i>(verb)</i>
+        <p>To prevent someone from accomplishing something; to oppose or frustrate.</p>
+
+        <h1>Trivial</h1>
+        <i>(adjective)</i>
+        <p>Of little importance or value; insignificant.</p>
+
+        <h1>Tantamount</h1>
+        <i>(adjective)</i>
+        <p>Equivalent in seriousness or effect.</p>
+
+        <h1>Timid</h1>
+        <i>(adjective)</i>
+        <p>Shy, lacking in courage or confidence.</p>
+
+        <h1>Truncate</h1>
+        <i>(verb)</i>
+        <p>To shorten something by cutting off a part of it.</p>
+
+        <h1>Turmoil</h1>
+        <i>(noun)</i>
+        <p>A state of great confusion or disturbance.</p>
+
+        <h1>Thorough</h1>
+        <i>(adjective)</i>
+        <p>Complete and detailed; leaving nothing out.</p>
+
+        <h1>Temperate</h1>
+        <i>(adjective)</i>
+        <p>Moderate or self-restrained, especially in regard to food or drink.</p>
+
+        <h1>Trite</h1>
+        <i>(adjective)</i>
+        <p>Overused and therefore lacking originality or freshness.</p>
+
+        <h1>Transparent</h1>
+        <i>(adjective)</i>
+        <p>Allowing light to pass through so that objects behind can be distinctly seen.</p>
+
+        <h1>Thoroughbred</h1>
+        <i>(noun)</i>
+        <p>A breed of horse that is recognized for its high quality, especially for racing.</p>
+
+        <h1>Tolerant</h1>
+        <i>(adjective)</i>
+        <p>Willing to accept or allow differences in behavior, opinions, or beliefs.</p>
+
+        <h1>Temporal</h1>
+        <i>(adjective)</i>
+        <p>Relating to time or worldly affairs, rather than spiritual matters.</p>
+
+        <h1>Tactile</h1>
+        <i>(adjective)</i>
+        <p>Related to or involving the sense of touch.</p>
+
+        <h1>Transitory</h1>
+        <i>(adjective)</i>
+        <p>Temporary, lasting only for a short time.</p>
+
+        <h1>Turbulent</h1>
+        <i>(adjective)</i>
+        <p>Characterized by conflict, disorder, or confusion; not calm or stable.</p>
+
+        <h1>Tribute</h1>
+        <i>(noun)</i>
+        <p>An act, statement, or gift that shows respect, admiration, or gratitude.</p>
+
+        <h1>Tedious</h1>
+        <i>(adjective)</i>
+        <p>Long, slow, or dull; tiresome and boring.</p>
+
+        <h1>Tactical</h1>
+        <i>(adjective)</i>
+        <p>Relating to or involving specific actions or strategies to achieve a goal.</p>
+
+        <h1>Treacherous</h1>
+        <i>(adjective)</i>
+        <p>Dangerously unstable or deceptive; involving betrayal.</p>
+
+        <h1>Thriving</h1>
+        <i>(adjective)</i>
+        <p>Flourishing or prospering, especially in a difficult environment.</p>
+
+        <h1>Taboo</h1>
+        <i>(noun)</i>
+        <p>A social or cultural prohibition or restriction.</p>
+
+        <h1>Trepidation</h1>
+        <i>(noun)</i>
+        <p>A feeling of fear or anxiety about something that may happen.</p>
+
+        <h1>Turbine</h1>
+        <i>(noun)</i>
+        <p>A machine for generating power, typically driven by steam, water, or air.</p>
+
+        <h1>Tangible</h1>
+        <i>(adjective)</i>
+        <p>Perceptible by touch; capable of being touched or physically felt.</p>
+
+        <h1>Taxonomy</h1>
+        <i>(noun)</i>
+        <p>The science or practice of classifying organisms or things into categories.</p>
+
+        <h1>Tranquility</h1>
+        <i>(noun)</i>
+        <p>A state of peace and calmness.</p>
+        <br>
+        <hr> <br>
+        <h1>Unanimous</h1>
+        <i>(adjective)</i>
+        <p>In complete agreement.</p>
+
+        <h1>Ubiquitous</h1>
+        <i>(adjective)</i>
+        <p>Present, appearing, or found everywhere.</p>
+
+        <h1>Utilize</h1>
+        <i>(verb)</i>
+        <p>To make practical use of something.</p>
+
+        <h1>Undefeated</h1>
+        <i>(adjective)</i>
+        <p>Not having been beaten or overcome in any way.</p>
+
+        <h1>Urgent</h1>
+        <i>(adjective)</i>
+        <p>Requiring immediate action or attention.</p>
+
+        <h1>Unkempt</h1>
+        <i>(adjective)</i>
+        <p>Messy, untidy, or not well-groomed.</p>
+
+        <h1>Uplift</h1>
+        <i>(verb)</i>
+        <p>To raise something to a higher position or level.</p>
+
+        <h1>Uprising</h1>
+        <i>(noun)</i>
+        <p>A rebellion or revolt against authority or government.</p>
+
+        <h1>Uncanny</h1>
+        <i>(adjective)</i>
+        <p>Strange or mysterious, especially in an unsettling way.</p>
+
+        <h1>Undermine</h1>
+        <i>(verb)</i>
+        <p>To weaken or damage something gradually or covertly.</p>
+
+        <h1>Ultimate</h1>
+        <i>(adjective)</i>
+        <p>The final or most important in a series, process, or development.</p>
+
+        <h1>Unprecedented</h1>
+        <i>(adjective)</i>
+        <p>Never done or known before; without previous example.</p>
+
+        <h1>Underestimate</h1>
+        <i>(verb)</i>
+        <p>To judge something as being less important, powerful, or significant than it really is.</p>
+
+        <h1>Usurp</h1>
+        <i>(verb)</i>
+        <p>To take a position of power or importance illegally or by force.</p>
+
+        <h1>Unite</h1>
+        <i>(verb)</i>
+        <p>To come together or combine to form a single entity.</p>
+
+        <h1>Uproarious</h1>
+        <i>(adjective)</i>
+        <p>Extremely noisy, or causing laughter or uproar.</p>
+
+        <h1>Unyielding</h1>
+        <i>(adjective)</i>
+        <p>Not giving way to pressure or persuasion; firm or determined.</p>
+
+        <h1>Unquestionable</h1>
+        <i>(adjective)</i>
+        <p>Not open to doubt or dispute; absolutely certain or definitive.</p>
+
+        <h1>Unreliable</h1>
+        <i>(adjective)</i>
+        <p>Not dependable or trustworthy.</p>
+
+        <h1>Undoubtedly</h1>
+        <i>(adverb)</i>
+        <p>Without doubt; certainly.</p>
+
+        <h1>Unjust</h1>
+        <i>(adjective)</i>
+        <p>Lacking in fairness or justice.</p>
+
+        <h1>Undivided</h1>
+        <i>(adjective)</i>
+        <p>Complete or fully dedicated without being split.</p>
+
+        <h1>Unveil</h1>
+        <i>(verb)</i>
+        <p>To reveal or disclose something that was previously hidden or unknown.</p>
+
+        <h1>Utmost</h1>
+        <i>(adjective)</i>
+        <p>Of the greatest or highest degree or amount.</p>
+
+        <h1>Uproot</h1>
+        <i>(verb)</i>
+        <p>To remove or destroy something completely from its source or position.</p>
+
+        <h1>Uplifting</h1>
+        <i>(adjective)</i>
+        <p>Providing encouragement, happiness, or inspiration.</p>
+
+        <h1>Unfold</h1>
+        <i>(verb)</i>
+        <p>To open up or reveal something gradually.</p>
+
+        <h1>Urban</h1>
+        <i>(adjective)</i>
+        <p>Relating to or characteristic of a city or town.</p>
+
+        <h1>Unstoppable</h1>
+        <i>(adjective)</i>
+        <p>Impossible to stop or prevent from achieving its goal.</p>
+
+        <h1>Unequal</h1>
+        <i>(adjective)</i>
+        <p>Not the same in quantity, size, degree, or status.</p>
+
+        <h1>Usual</h1>
+        <i>(adjective)</i>
+        <p>Commonly occurring or expected.</p>
+    </div>
+
+</body>
+
+</html>
